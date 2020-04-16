@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "canvas": "^2.6.1",
-    "image-pixels": "^2.2.2"
+    "canvas": "^2.6.1"
   }
 }
