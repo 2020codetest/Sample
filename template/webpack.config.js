@@ -92,6 +92,10 @@ module.exports = (env, args) => {
                     }
                 }
             }
+        },
+        devServer: {
+            open: true,
+            port: 8080
         }
     }
 

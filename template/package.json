@@ -1,11 +1,12 @@
 {
-  "name": "vuex-test",
+  "name": "vue-ts-template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "debug": "webpack --mode development --watch"
+    "debug": "webpack --mode development --watch",
+    "dev": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
@@ -21,9 +22,11 @@
     "vue": "^2.6.11",
     "vue-loader": "^15.9.1",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
   },
   "devDependencies": {
+    "node-sass": "^4.14.0",
     "vue-property-decorator": "^8.4.2",
     "vue-template-compiler": "^2.6.11"
   }

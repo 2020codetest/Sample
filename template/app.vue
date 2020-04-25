@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div>{{msg}}</div>
+        <div class="red">{{msg}}</div>
         <img :src="src"/>
     </div>
 </template>
@@ -14,4 +14,7 @@
     }
 </script>
 <style lang="scss" scoped>
+.red{
+    color: red;
+}
 </style>
