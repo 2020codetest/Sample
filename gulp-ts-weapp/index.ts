@@ -1,3 +1,3 @@
 function test(): void{
-    console.log("test function 12")
+    console.log("test function 12)
 }
