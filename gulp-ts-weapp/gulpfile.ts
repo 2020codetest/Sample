@@ -7,7 +7,6 @@ const tsProject = ts.createProject("tsconfig.json");
 const plumber = require('gulp-plumber');
 const eslint = require('gulp-eslint');
 
-
 let timer: any = undefined
 function debounce(task: () => any, interval: number): (done: (error?: any) => void) => void{
     return function(done: (error?: any) => void){
