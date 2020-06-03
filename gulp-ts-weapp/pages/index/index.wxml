@@ -1,0 +1,4 @@
+<view class="title"> Hello {{name}} </view>
+<view class="title"> base64 {{base64}} </view>
+<view class="title"> md5 {{md5}} </view>
+<button bindtap="changeName"> Click me! </button>

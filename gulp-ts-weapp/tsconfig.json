@@ -1,0 +1,11 @@
+{
+    "include":["./**/*.ts","typings/**/*.ts"],
+    "exclude": ["./gulpfile.ts"],
+    "compilerOptions": {
+        "noImplicitAny":true,
+        "target":"ES5",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "incremental": true
+    }
+}
