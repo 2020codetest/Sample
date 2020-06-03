@@ -1,2 +1,0 @@
-# weapp-ts-gulp
-使用gulp作为编译工具对typescript和sass进行生成对应的js和wxss文件，同时支持watch模式。
