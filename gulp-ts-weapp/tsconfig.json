@@ -1,5 +1,7 @@
 {
+    "exclude": ["./gulpfile.ts"],
     "compilerOptions": {
-        "esModuleInterop": true
+        "esModuleInterop": true,
+        "incremental": true
     }
 }

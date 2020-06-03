@@ -1,8 +1,16 @@
 import GulpClient from "gulp"
+const tsPlugin = require("gulp-typescript")
+let tsProject = tsPlugin.createProject("tsconfig.json");
 
-function testTask(done: (err?: any) => void){
-    console.log("test task")
-    done()
+function tsTask(){
+    return tsProject.src()
+    .pipe(tsProject())
+    .pipe(GulpClient.dest("."))
 }
 
-GulpClient.task("test", testTask)
+function watchTask() {
+    GulpClient.watch(["./**/*.ts", "!node_modules/**"], tsTask)
+}
+
+GulpClient.task("build", tsTask)
+GulpClient.task("watch", watchTask)
