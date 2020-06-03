@@ -1,6 +1,6 @@
 import { Util } from "../../model/util"
 import { Base64} from 'js-base64'
-const md5 = require("md5")
+import md5 from "md5"
 
 Page({
     data: {
@@ -8,8 +8,8 @@ Page({
         base64: "base64",
         md5: "md5"
     },
+
     changeName: function(){
-        console.log("change name 1")
         this.setData({
             base64:  Base64.encode(Util.Now()),
             name: Util.Now(),

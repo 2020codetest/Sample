@@ -6,6 +6,8 @@
         "target":"ES5",
         "resolveJsonModule": true,
         "esModuleInterop": true,
-        "incremental": true
+        "incremental": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true
     }
 }
