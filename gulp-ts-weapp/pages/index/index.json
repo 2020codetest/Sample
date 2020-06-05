@@ -1,1 +1,9 @@
-{"navigationBarBackgroundColor":"#eeeeee","navigationBarTextStyle":"black","navigationBarTitleText":"小冰放送","backgroundColor":"#eeeeee","backgroundTextStyle":"light","enablePullDownRefresh":false,"disableScroll":true}  
+{
+    "navigationBarBackgroundColor":"#eeeeee",
+    "navigationBarTextStyle":"black",
+    "navigationBarTitleText":"测试页面",
+    "backgroundColor":"#eeeeee",
+    "backgroundTextStyle":"light",
+    "enablePullDownRefresh":false,
+    "disableScroll":true
+}  
