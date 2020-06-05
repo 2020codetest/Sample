@@ -7,7 +7,7 @@ const eslint = require('gulp-eslint');
 let tsProject = tsPlugin.createProject("tsconfig.json");
 
 function esLintTask(): any{
-    return GulpClient.src(['./**/*.ts', '!node_modules/**', "!gulpfile.ts"])
+    return GulpClient.src(['./**/*.ts', '!node_modules/**', "!typings/**", "!gulpfile.ts"])
         .pipe(plumber({
             errorHandler: function(error: any){
                 console.log(error.toString())
@@ -62,10 +62,10 @@ function sassTask() : any{
 }
 
 function watchTask() {
-    GulpClient.watch(["./**/*.ts", "!node_modules/**", "!gulpfile.ts"], tsTask)
-    GulpClient.watch(["./**/*.ts", "!node_modules/**", "!gulpfile.ts"], esLintTask)
+    GulpClient.watch(["./**/*.ts", "!node_modules/**", "!typings/**", "!gulpfile.ts"], tsTask)
+    GulpClient.watch(["./**/*.ts", "!node_modules/**",  "!typings/**", "!gulpfile.ts"], esLintTask)
     GulpClient.watch(["./**/*.sass", "!node_modules/**"], sassTask)
 }
 
-GulpClient.task("build", GulpClient.parallel([tsTask, sassTask]))
+GulpClient.task("build", GulpClient.parallel([tsTask, sassTask, esLintTask]))
 GulpClient.task("watch", debounce(watchTask, 2500))
