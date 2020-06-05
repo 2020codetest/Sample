@@ -3,8 +3,22 @@ const tsPlugin = require("gulp-typescript")
 const plumber = require('gulp-plumber');
 const sass = require("gulp-sass")
 const rename = require("gulp-rename")
-
+const eslint = require('gulp-eslint');
 let tsProject = tsPlugin.createProject("tsconfig.json");
+
+function esLintTask(): any{
+    return GulpClient.src(['./**/*.ts', '!node_modules/**', "!gulpfile.ts"])
+        .pipe(plumber({
+            errorHandler: function(error: any){
+                console.log(error.toString())
+                this.emit('end')
+            }
+        }))
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+}
+
 function tsTask(){
     return tsProject.src()
     .pipe(plumber({
@@ -48,7 +62,8 @@ function sassTask() : any{
 }
 
 function watchTask() {
-    GulpClient.watch(["./**/*.ts", "!node_modules/**"], tsTask)
+    GulpClient.watch(["./**/*.ts", "!node_modules/**", "!gulpfile.ts"], tsTask)
+    GulpClient.watch(["./**/*.ts", "!node_modules/**", "!gulpfile.ts"], esLintTask)
     GulpClient.watch(["./**/*.sass", "!node_modules/**"], sassTask)
 }
 
