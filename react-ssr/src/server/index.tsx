@@ -1,15 +1,15 @@
 import React from 'react'
-import {renderToStaticMarkup} from "react-dom/server"
-import { Detail } from './detail';
-import {List} from "./list"
-import { ItemData, ListData } from './model';
+import {renderToString} from "react-dom/server"
+import { Detail } from '../components/detail';
+import {List} from "../components/list"
+import { DetailData, ItemData, ListData } from '../components/model';
 
 function getList(list: ListData) {
-    return renderToStaticMarkup(<List items={list.items} />);
+    return renderToString(<List items={list.items} />);
 }
 
-function getDetail(item: ItemData) {
-    return renderToStaticMarkup(<Detail title={item.title} img={item.img}/>)
+function getDetail(item: DetailData) {
+    return renderToString(<Detail props={item.props}/>)
 }
 
 module.exports = {

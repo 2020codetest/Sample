@@ -1,4 +1,5 @@
 import React from "react";
 import * as ReactDOM from "react-dom"
+import { Detail } from "../components/detail";
 
-ReactDOM.render(<div>Hello World From Client</div>,  document.getElementById("root"))
+ReactDOM.hydrate(<Detail props={(window as any).initState}/>,  document.getElementById("root"))
