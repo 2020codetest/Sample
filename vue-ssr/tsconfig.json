@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "CommonJS",
+        "lib": ["DOM", "ESNext"],
+        "allowJs": true,
+        "moduleResolution": "node",
+        "experimentalDecorators": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_moduels/"
+    ]
+}
