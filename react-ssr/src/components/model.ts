@@ -4,6 +4,10 @@ export interface ItemData {
     img: string;
 }
 
+export interface DetailData {
+    props: ItemData;
+}
+
 export interface ListData {
     items: ItemData[];
 }
