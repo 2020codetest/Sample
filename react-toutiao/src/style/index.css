@@ -1,0 +1,275 @@
+body{
+    margin: 0;
+}
+
+#root {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.head{
+    background: #d43d3d;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 132px;
+    width: 100%;
+    z-index: 100;
+}
+
+.mail {
+    background: url(../../media/mailbox.png) no-repeat center center;
+    width: 96px;
+    height: 75px;
+    margin-left: 36px;
+    position: relative;
+}
+
+.mailnot{
+    border-radius: 15px;
+    width: 30px;
+    height: 30px;
+    background: #ffffff;
+    position: absolute;
+    top: 6px;
+    right: 16px;
+}
+
+.rowflex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    background: url(../../media/logo.png) no-repeat center center;
+    width: 249px;
+    height: 132px;
+}
+
+.refresh {
+    background: url(../../media/refresh.png) no-repeat center center;
+    width: 45px;
+    height: 45px;
+    margin-left: 30px;
+}
+
+.search {
+    background: url(../../media/search.png) no-repeat center center;
+    width: 72px;
+    height: 72px;
+    margin-right: 72px;
+}
+
+.menu{
+    position:fixed;
+    top: 132px;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    width: 100%;
+    height: 111px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: nowrap;
+    background: #f4f5f6;
+    overflow-x: scroll;
+    z-index: 100;
+}
+
+.menu::-webkit-scrollbar {
+    display: none;
+  }
+
+.menuitem{
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+    height: 78px;
+    line-height: 78px;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 51px;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.menuitem.menucur{
+    color:#f85959;
+}
+
+.menumore{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    width: 108px;
+    height: 108px;
+    right: 0px;
+    position: fixed;
+    background: #f4f5f6;
+}
+
+.cross{
+    position: absolute;
+    margin:auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 51px;
+    height: 51px;
+    line-height: 108px;
+    display: block;
+}
+
+.cross::before{
+    height: 51px;
+    content: " ";
+    width: 4px;
+    background-color: #f85959;
+    transform: rotate(90deg);
+    display: block;
+    position: absolute;
+    left: 25px;
+}
+
+.cross::after{
+    height: 51px;
+    content: " ";
+    width: 4px;
+    background-color: #f85959;
+    display: block;
+    position: absolute;
+    left: 25px;
+}
+
+.content{
+    margin-top: 240px;
+    font-size: 51px;
+    overflow-y: scroll;
+    position: relative;
+    flex: 1;
+}
+
+.item{
+    background:white;
+    margin: 48px 45px 48px 45px;
+    min-height: 126px;
+    display: block;
+}
+
+.item.imgitem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.txtitemwrap{
+    margin-right: 36px;
+}
+
+.txttitle{
+    color: rgb(34,34,34);
+    line-height: 63px;
+    font-size: 51px;
+    display: inline-block;
+}
+
+.txttitle.loading{
+    width: 100%;
+    text-align: center;
+    margin-top: 18px;
+}
+
+a:visited.txttitle{
+    color: #aaa;
+}
+
+.txtmeta {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    clear:left;
+}
+
+.txtlabel {
+    color: #f85959;
+    border: 1px solid rgba(248, 89, 89, 0.5);
+    margin-right: 15px;
+    font-size: 27px;
+    border-radius: 6px;
+    width: 72px;
+    text-align: center;
+}
+
+.txtinfo {
+    font-size: 30px;
+    line-height: 36px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #999;
+}
+
+.innerimglist{
+    list-style: none;
+    margin-top: 18px;
+    padding: 0;
+    border: 0;
+}
+
+.innerimgholder{
+    width: 30%;
+    overflow: hidden;
+    position: relative;
+    background: url(../../media/fallback.png) center center no-repeat;
+    background-size: 50%;
+    margin-right: 10px;
+    float: left;
+}
+
+.innerimgholder.large{
+    width: 100%;
+    margin: 18px 0;
+}
+
+.innerimg{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.txtitemwrap {
+    flex: 1;
+}
+
+.toast{
+    position: absolute;
+    width: 100%;
+    color: #2a90d7;
+    display: inline-block;
+    background: rgba(213, 233, 247, 0.9);
+    font-size: 51px;
+    height: 128px;
+    line-height: 128px;
+    z-index: 100;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    top: 240px;
+}
