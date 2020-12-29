@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "allowSyntheticDefaultImports": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "strict": true,
+        "charset": "UTF-8",
+        "target": "ES5",
+        "module": "CommonJS",
+        "lib": ["DOM", "ESNext"],
+        "jsx": "react",
+        "jsxFactory": "React.createElement",
+        "jsxFragmentFactory": "React.Fragment"
+    },
+    "exclude": ["node_modules"],
+    "include": ["src/**/*"]
+}
