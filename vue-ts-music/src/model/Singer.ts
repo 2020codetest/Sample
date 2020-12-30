@@ -1,10 +1,10 @@
 export interface Singer{
-    cover: string;
-    id: string;
     name: string;
+    id: number;
+    avatar: string;
 }
 
 export interface SingerRepo{
-    category: string;
-    singers: Singer[];
+    title: string;
+    items: Singer[];
 }

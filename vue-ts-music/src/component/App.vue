@@ -85,5 +85,6 @@ i{
     top: 88px;
     bottom: 0;
     overflow-y: scroll;
+    width: 100%;
 }
 </style>
