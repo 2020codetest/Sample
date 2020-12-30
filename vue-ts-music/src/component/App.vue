@@ -8,6 +8,9 @@
         <div class="content" v-if="!mylist && tab == 1">
             <SingerListComponent />
         </div>
+        <div class="content" v-if="!mylist && tab == 2">
+            <TopListComponent />
+        </div>
         <MySonogListComponent v-if="mylist"/>
     </div>
 </template>
@@ -18,6 +21,7 @@ import TabComponent from "./Tab.vue"
 import RecommendationComponent from "./Recommendation.vue"
 import SingerListComponent from "./SingerList.vue"
 import MySonogListComponent from "./MySongList.vue"
+import TopListComponent from "./TopList.vue"
 import { CoverRecomendation, SongListRecomendation } from "../model/Recommendation"
 import {getMockCoverRecomendation, getMockSongListRecomendation} from"../mock/MockData"
 import {EventHub, EventData, EventType} from "../model/EventHub"
@@ -25,7 +29,7 @@ import BetterScroll from "better-scroll"
 
 let userCallback: (data: EventData) => void | undefined = undefined;
 let tabCallback: (data: EventData) => void | undefined = undefined
-@Component({name: "App", components: {HeaderComponent, TabComponent,  RecommendationComponent, SingerListComponent, MySonogListComponent}})
+@Component({name: "App", components: {HeaderComponent, TabComponent,  RecommendationComponent, SingerListComponent, MySonogListComponent, TopListComponent}})
 export default class App extends Vue {
     list: CoverRecomendation[] = getMockCoverRecomendation()
     songlist: SongListRecomendation[] = getMockSongListRecomendation()
@@ -72,6 +76,12 @@ li {
 
 i{    
     font-style: normal;
+}
+
+p{
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 .root{

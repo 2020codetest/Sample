@@ -1,6 +1,8 @@
 import { CoverRecomendation, SongListRecomendation } from "../model/Recommendation";
 import { SingerRepo } from "../model/Singer";
 import { Song } from "../model/Song";
+import { TopItem } from "../model/TopItem";
+import TopListData from "./toplist.json"
 
 export function getMockCoverRecomendation(): CoverRecomendation[] {
     let ret: CoverRecomendation[] = [
@@ -967,4 +969,8 @@ export function getMockSingerList(): SingerRepo[]{
           }
     ]
     return ret
+}
+
+export function getMockTopList(): TopItem[] {
+  return TopListData;
 }

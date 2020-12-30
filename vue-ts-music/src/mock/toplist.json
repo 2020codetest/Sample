@@ -1,0 +1,569 @@
+[
+    {
+        "id": 4,
+        "listenCount": 9900000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000000Snt8i3EWlw2.jpg",
+        "songList": [
+            {
+                "singername": "雪二",
+                "songname": "渐冷"
+            },
+            {
+                "singername": "邓伦",
+                "songname": "痴情冢"
+            },
+            {
+                "singername": "时代少年团",
+                "songname": "2035是这young"
+            }
+        ],
+        "topTitle": "巅峰榜·流行指数",
+        "type": 0
+    },
+    {
+        "id": 26,
+        "listenCount": 19500000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002N9W1Q26esGb.jpg",
+        "songList": [
+            {
+                "singername": "是七叔呢",
+                "songname": "踏山河"
+            },
+            {
+                "singername": "回小仙",
+                "songname": "醒不来的梦"
+            },
+            {
+                "singername": "秋原依",
+                "songname": "错季"
+            }
+        ],
+        "topTitle": "巅峰榜·热歌",
+        "type": 0
+    },
+    {
+        "id": 27,
+        "listenCount": 671650,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002Uwlxp0ltjbV.jpg",
+        "songList": [
+            {
+                "singername": "吴青峰",
+                "songname": "如果声音不记得"
+            },
+            {
+                "singername": "邓伦",
+                "songname": "痴情冢"
+            },
+            {
+                "singername": "时代少年团",
+                "songname": "2035是这young"
+            }
+        ],
+        "topTitle": "巅峰榜·新歌",
+        "type": 0
+    },
+    {
+        "id": 62,
+        "listenCount": 19100000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M0000019pDhq3B0uSU.jpg",
+        "songList": [
+            {
+                "singername": "周深",
+                "songname": "相守"
+            },
+            {
+                "singername": "薛之谦",
+                "songname": "认真的雪"
+            },
+            {
+                "singername": "陆虎",
+                "songname": "雪落下的声音"
+            }
+        ],
+        "topTitle": "飙升榜",
+        "type": 0
+    },
+    {
+        "id": 58,
+        "listenCount": 1990000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002C2juA1H4hwE.jpg",
+        "songList": [
+            {
+                "singername": "满舒克/黄新淳",
+                "songname": "微妙感觉"
+            },
+            {
+                "singername": "Landuo懒惰/斯威特Sweet/沙一汀EL/W8VES",
+                "songname": "怕"
+            },
+            {
+                "singername": "李汶翰/陈晓东/刘维",
+                "songname": "不服 (Live)"
+            }
+        ],
+        "topTitle": "说唱榜",
+        "type": 0
+    },
+    {
+        "id": 57,
+        "listenCount": 1930000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000001WgI210Tkor1.jpg",
+        "songList": [
+            {
+                "singername": "VIZE/Alan Walker/Leony/Edward Artemyev",
+                "songname": "Space Melody (Edward Artemyev)"
+            },
+            {
+                "singername": "FrogMonster",
+                "songname": "Remember Our Summer"
+            },
+            {
+                "singername": "Lost Frequencies/Janieck Devy",
+                "songname": "Reality (Christmas Mix|Mixed)"
+            }
+        ],
+        "topTitle": "电音榜",
+        "type": 0
+    },
+    {
+        "id": 28,
+        "listenCount": 10000000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000004BJjv713CNQB.jpg",
+        "songList": [
+            {
+                "singername": "是七叔呢",
+                "songname": "踏山河"
+            },
+            {
+                "singername": "林晨阳",
+                "songname": "失眠播报"
+            },
+            {
+                "singername": "蓝心羽",
+                "songname": "阿拉斯加海湾"
+            }
+        ],
+        "topTitle": "巅峰榜·网络歌曲",
+        "type": 0
+    },
+    {
+        "id": 5,
+        "listenCount": 3536260,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000001Pmr2h4HSFVN.jpg",
+        "songList": [
+            {
+                "singername": "薛之谦",
+                "songname": "把你揉碎捏成苹果"
+            },
+            {
+                "singername": "周深",
+                "songname": "和光同尘"
+            },
+            {
+                "singername": "李润祺",
+                "songname": "茫"
+            }
+        ],
+        "topTitle": "巅峰榜·内地",
+        "type": 0
+    },
+    {
+        "id": 3,
+        "listenCount": 9186740,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000003inTVf0caMWr.jpg",
+        "songList": [
+            {
+                "singername": "Ed Sheeran",
+                "songname": "Afterglow"
+            },
+            {
+                "singername": "Taylor Swift",
+                "songname": "willow (moonlit witch version)"
+            },
+            {
+                "singername": "Troye Sivan/Kacey Musgraves/Mark Ronson",
+                "songname": "Easy"
+            }
+        ],
+        "topTitle": "巅峰榜·欧美",
+        "type": 0
+    },
+    {
+        "id": 59,
+        "listenCount": 1930000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M0000011y3Yi1xsb6W.jpg",
+        "songList": [
+            {
+                "singername": "陈奕迅",
+                "songname": "是但求其爱"
+            },
+            {
+                "singername": "古巨基",
+                "songname": "有一种爱"
+            },
+            {
+                "singername": "Supper Moment",
+                "songname": "Yes I Do (国)"
+            }
+        ],
+        "topTitle": "香港地区榜",
+        "type": 0
+    },
+    {
+        "id": 16,
+        "listenCount": 3359840,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M0000017VpJM3zMF68.jpg",
+        "songList": [
+            {
+                "singername": "TWICE (트와이스)",
+                "songname": "CRY FOR ME"
+            },
+            {
+                "singername": "伯贤 (백현)",
+                "songname": "游乐园 (Amusement Park)"
+            },
+            {
+                "singername": "aespa (에스파)",
+                "songname": "Black Mamba"
+            }
+        ],
+        "topTitle": "巅峰榜·韩国",
+        "type": 0
+    },
+    {
+        "id": 60,
+        "listenCount": 19500000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M00000126Lp924EZnn.jpg",
+        "songList": [
+            {
+                "singername": "林晨阳",
+                "songname": "失眠播报"
+            },
+            {
+                "singername": "赵英俊",
+                "songname": "送你一朵小红花"
+            },
+            {
+                "singername": "张远",
+                "songname": "嘉宾"
+            }
+        ],
+        "topTitle": "抖音排行榜",
+        "type": 0
+    },
+    {
+        "id": 29,
+        "listenCount": 1091440,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002zErm53omObO.jpg",
+        "songList": [
+            {
+                "singername": "周深",
+                "songname": "和光同尘"
+            },
+            {
+                "singername": "赵英俊",
+                "songname": "送你一朵小红花"
+            },
+            {
+                "singername": "张杰",
+                "songname": "跃进人海拥抱你"
+            }
+        ],
+        "topTitle": "巅峰榜·影视金曲",
+        "type": 0
+    },
+    {
+        "id": 17,
+        "listenCount": 1326850,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002ysuOM3TfdBC.jpg",
+        "songList": [
+            {
+                "singername": "鹿乃 (かの)/墨韵随步摇",
+                "songname": "纸鸢"
+            },
+            {
+                "singername": "amazarashi (アマザラシ)",
+                "songname": "令和二年"
+            },
+            {
+                "singername": "YOASOBI (ヨアソビ)",
+                "songname": "ハルカ (Haruka)"
+            }
+        ],
+        "topTitle": "巅峰榜·日本",
+        "type": 0
+    },
+    {
+        "id": 201,
+        "listenCount": 1665840,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000000hnVNf2jNuJn.jpg",
+        "songList": [
+            {
+                "singername": "薛之谦",
+                "songname": "天外来物"
+            },
+            {
+                "singername": "邓伦",
+                "songname": "痴情冢 (《晴雅集》电影片尾曲)"
+            },
+            {
+                "singername": "王嘉尔/林俊杰",
+                "songname": "过"
+            }
+        ],
+        "topTitle": "巅峰榜·MV",
+        "type": 0
+    },
+    {
+        "id": 52,
+        "listenCount": 120266,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M0000010wnsz2KToCv.jpg",
+        "songList": [
+            {
+                "singername": "张远",
+                "songname": "嘉宾"
+            },
+            {
+                "singername": "林晨阳",
+                "songname": "失眠播报"
+            },
+            {
+                "singername": "Bomb比尔",
+                "songname": "1022-比尔的歌"
+            }
+        ],
+        "topTitle": "巅峰榜·腾讯音乐人原创榜",
+        "type": 0
+    },
+    {
+        "id": 36,
+        "listenCount": 1910000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000004Hu1jU35SLgM.jpg",
+        "songList": [
+            {
+                "singername": "于文文",
+                "songname": "体面"
+            },
+            {
+                "singername": "刘若英",
+                "songname": "后来"
+            },
+            {
+                "singername": "陈粒",
+                "songname": "奇妙能力歌"
+            }
+        ],
+        "topTitle": "巅峰榜·K歌金曲",
+        "type": 0
+    },
+    {
+        "id": 61,
+        "listenCount": 502740,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000000Nix611Nle1f.jpg",
+        "songList": [
+            {
+                "singername": "吴青峰",
+                "songname": "如果声音不记得"
+            },
+            {
+                "singername": "徐佳莹",
+                "songname": "不舍（《斗罗大陆》动画片尾曲）"
+            },
+            {
+                "singername": "林俊杰",
+                "songname": "修炼爱情 (Jazz Version)"
+            }
+        ],
+        "topTitle": "台湾地区榜",
+        "type": 0
+    },
+    {
+        "id": 63,
+        "listenCount": 13436460,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000003cVk743yevRu.jpg",
+        "songList": [
+            {
+                "singername": "井迪儿",
+                "songname": "失控（DJ版） (DJ版)"
+            },
+            {
+                "singername": "是七叔呢",
+                "songname": "踏山河（DJ Yaha）"
+            },
+            {
+                "singername": "秋原依",
+                "songname": "错季 (DJ名龙版)"
+            }
+        ],
+        "topTitle": "DJ舞曲榜",
+        "type": 0
+    },
+    {
+        "id": 64,
+        "listenCount": 1118320,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002M3fPM0QCNAj.jpg",
+        "songList": [
+            {
+                "singername": "李克勤/周深",
+                "songname": "爱情转移 (Live)"
+            },
+            {
+                "singername": "常石磊/王源",
+                "songname": "血腥爱情故事 (Live)"
+            },
+            {
+                "singername": "单依纯",
+                "songname": "永不失联的爱 (Live)"
+            }
+        ],
+        "topTitle": "综艺新歌榜",
+        "type": 0
+    },
+    {
+        "id": 65,
+        "listenCount": 2646220,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002IH2Dc0I4uaD.jpg",
+        "songList": [
+            {
+                "singername": "是七叔呢",
+                "songname": "踏山河"
+            },
+            {
+                "singername": "是七叔呢",
+                "songname": "燕无歇"
+            },
+            {
+                "singername": "闻人听書_",
+                "songname": "衣带渐宽"
+            }
+        ],
+        "topTitle": "国风热歌榜",
+        "type": 0
+    },
+    {
+        "id": 67,
+        "listenCount": 9300000,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000004RLZQx0IMpfH.jpg",
+        "songList": [
+            {
+                "singername": "程响",
+                "songname": "四季予你"
+            },
+            {
+                "singername": "Dunn",
+                "songname": "เบลล์ นิภาดา-泰语童声ให้เคอรี่มาส่งได้บ่ (Dunn remix)"
+            },
+            {
+                "singername": "8先生",
+                "songname": "Ngay Tho (Remix)"
+            }
+        ],
+        "topTitle": "听歌识曲榜",
+        "type": 0
+    },
+    {
+        "id": 72,
+        "listenCount": 489960,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002X9eV12mSUut.jpg",
+        "songList": [
+            {
+                "singername": "徐佳莹",
+                "songname": "不舍（《斗罗大陆》动画片尾曲）"
+            },
+            {
+                "singername": "叶炫清",
+                "songname": "侠者"
+            },
+            {
+                "singername": "张杰",
+                "songname": "吞噬星空"
+            }
+        ],
+        "topTitle": "动漫音乐榜",
+        "type": 0
+    },
+    {
+        "id": 73,
+        "listenCount": 405156,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002XGRMo37qJ9Q.jpg",
+        "songList": [
+            {
+                "singername": "周深",
+                "songname": "江湖觅知音"
+            },
+            {
+                "singername": "K/DA/Madison Beer/(G)I-DLE ((여자)아이들)/刘柏辛Lexie/Jaira Burns/Seraphine/英雄联盟",
+                "songname": "MORE"
+            },
+            {
+                "singername": "汪苏泷",
+                "songname": "灵猫传"
+            }
+        ],
+        "topTitle": "游戏音乐榜",
+        "type": 0
+    },
+    {
+        "id": 74,
+        "listenCount": 1723740,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000002uHYqX2VBnWj.jpg",
+        "songList": [
+            {
+                "singername": "秋原依",
+                "songname": "错季 (DJ名龙版)"
+            },
+            {
+                "singername": "乔艳艳",
+                "songname": "人心伤了只有疼 (女版)"
+            },
+            {
+                "singername": "二小姐",
+                "songname": "有没有一种思念永不疲惫"
+            }
+        ],
+        "topTitle": "Q音快手榜",
+        "type": 0
+    },
+    {
+        "id": 75,
+        "listenCount": 362471,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000000781m33XvkTV.jpg",
+        "songList": [
+            {
+                "singername": "QQ音乐电台",
+                "songname": "星动福利社"
+            },
+            {
+                "singername": "DJ彼岸",
+                "songname": "抖音最火歌曲排行榜"
+            },
+            {
+                "singername": "宝宝巴士",
+                "songname": "宝宝巴士英文儿歌"
+            }
+        ],
+        "topTitle": "有声榜",
+        "type": 0
+    },
+    {
+        "id": 70,
+        "listenCount": 106900,
+        "picUrl": "http://y.gtimg.cn/music/photo_new/T003R300x300M000003hzETf0jo118.jpg",
+        "songList": [
+            {
+                "singername": "阿莱",
+                "songname": "可可托海的牧羊人 (原唱: 王琪)"
+            },
+            {
+                "singername": "金芸菲",
+                "songname": "醒不来的梦 (原唱: 回小仙)"
+            },
+            {
+                "singername": "Li-2c",
+                "songname": "错季 (原唱: 秋原依)"
+            }
+        ],
+        "topTitle": "达人音乐榜",
+        "type": 0
+    }
+]
