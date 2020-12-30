@@ -37,7 +37,6 @@ export default class SingerList extends Vue{
     singers: SingerRepo[] = getMockSingerList()
     scrollY: number = 0
     currentIndex: number = 0
-    scroll: BetterScroll|undefined = undefined
     listHeight: number[] = []
     mounted() {
         let list: string[] = []
@@ -51,8 +50,8 @@ export default class SingerList extends Vue{
     }
 
     initScroll() {
-        this.scroll = new BetterScroll(this.$refs.listView as HTMLElement, {probeType: 3, click: true})
-        this.scroll.on('scroll', (pos) => {
+        let scroll = new BetterScroll(this.$refs.listView as HTMLElement, {probeType: 3, click: true})
+        scroll.on('scroll', (pos) => {
             let y = pos.y
             if (y > 0) {
                 this.currentIndex = 0
@@ -134,7 +133,6 @@ ul{
         border-radius: 10px;
         text-align: center;
         background: rgba(0, 0, 0, 0.3);
-        font-family:Helvetica;
         .item {
             padding: 3px;
             line-height: 1;

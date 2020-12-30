@@ -11,8 +11,8 @@
         <div class="mysonglistplay">
             <span class="mysonglistplaytxt">随机播放全部</span>
         </div>
-        <div class="mysonglistwrapper">
-            <ul v-if="activelist.length" class="mysonglistitems">
+        <div class="mysonglistwrapper" ref="songlist">
+            <ul v-if="activelist.length" class="mysonglistitems" >
                 <li v-for="item in activelist" :key="item.id" class="mysonglistitem">
                     <p class="mysonglistitemtitle">{{item.title}}</p>
                     <p class="mysonglistiteminfo">{{item.singer}} {{item.album}}</p>
@@ -31,6 +31,7 @@ import {Song} from "../model/Song"
 import {MySongListType} from "../model/MySongListType"
 import { EventHub, EventType } from "../model/EventHub"
 import { getMockRecentSongList } from "../mock/MockData"
+import BetterScroll from "better-scroll"
 interface MySongListTab {
     title: string;
     sel: boolean;
@@ -44,8 +45,9 @@ export default class MySongList extends Vue {
     activelist: Song[] = []
     tabs: MySongListTab[] = [{title: "我喜欢的", sel: true, id: 0}, {title: "最近听的", sel: false, id: 1}]
     active: MySongListTab = this.tabs[0]
+    scroll: BetterScroll|undefined = undefined
     mounted() {
-        console.log("MySongList mounted")
+        this.scroll = new BetterScroll(this.$refs.songlist as HTMLElement)
     }
 
     select(id: number) {
@@ -54,6 +56,9 @@ export default class MySongList extends Vue {
                 tab.sel = true
                 this.active = tab
                 this.activelist = id == 0 ? this.like : this.recent
+                Vue.nextTick(() => {
+                    this.scroll.refresh()
+                })
             }
             else{
                 tab.sel = false
@@ -141,10 +146,10 @@ export default class MySongList extends Vue {
 }
 
 .mysonglistwrapper{
-    position: absolute;
     top: 110px;
     bottom: 0;
     width: 100%;
+    position: absolute;
     overflow-y: scroll;
 }
 
