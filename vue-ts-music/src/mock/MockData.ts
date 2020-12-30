@@ -3,6 +3,10 @@ import { SingerRepo } from "../model/Singer";
 import { Song } from "../model/Song";
 import { TopItem } from "../model/TopItem";
 import TopListData from "./toplist.json"
+import HotKeyListData from "./hotkey.json"
+import SearchResultData from "./searchresults.json"
+import { HotKey } from "../model/HotKey";
+import { SearchResult } from "../model/SearchResult";
 
 export function getMockCoverRecomendation(): CoverRecomendation[] {
     let ret: CoverRecomendation[] = [
@@ -973,4 +977,17 @@ export function getMockSingerList(): SingerRepo[]{
 
 export function getMockTopList(): TopItem[] {
   return TopListData;
+}
+
+export function getMockHotKeys(): HotKey[] {
+  let keys =  HotKeyListData;
+  if (keys.length > 10) {
+    keys = keys.slice(0, 10)
+  }
+
+  return keys
+}
+
+export function getMockSearchResults(): SearchResult{
+  return SearchResultData;
 }
