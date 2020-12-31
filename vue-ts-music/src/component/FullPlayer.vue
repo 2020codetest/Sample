@@ -9,7 +9,7 @@
             <p class="fullplaymsg">{{data.singer}}</p>
         </header>
         <div class="fullplayercontent">
-            <img v-show="tab == 0" :src="data.cover" :alt="data.songname" class="fullplayercontentcover"/>
+            <img v-show="tab == 0" :src="data.cover" :alt="data.songname" class="fullplayercontentcover playanimation"/>
             <div v-show="tab == 1">暂无歌词</div>
         </div>
         <div class="fullplayerbottom">
@@ -120,8 +120,8 @@ export default class FullPlayer extends Vue {
     height: 80vw;
     object-fit: contain;
     border-radius: 50%;
-    transform: rotate(90deg);
 }
+
 
 .fullplayerbottom{
     position: fixed;
