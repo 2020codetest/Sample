@@ -20,6 +20,10 @@ export default class Tab extends Vue{
     list: TabInfo[] = [{title: "推荐", sel: true, id: 0}, {title: "歌手", sel: false, id: 1}, {title: "排行", sel: false, id: 2}, {title: "搜索", sel: false, id: 3}]
     mounted() {
         let currentRoute = router.currentRoute
+        if (typeof currentRoute.meta !== "number") {
+            return
+        }
+
         this.select(currentRoute.meta as number)
     }
 
