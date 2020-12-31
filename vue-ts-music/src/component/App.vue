@@ -2,21 +2,9 @@
     <div class="root">
         <HeaderComponent />
         <TabComponent />
-        <div class="content" v-if="!mylist && tab == 0">
-            <RecommendationComponent />
+        <div class="content">
+            <router-view />
         </div>
-        <div class="content" v-if="!mylist && tab == 1">
-            <SingerListComponent />
-        </div>
-        <div class="content" v-if="!mylist && tab == 2">
-            <TopListComponent />
-        </div>
-        <div class="content" v-if="!mylist && tab == 3">
-            <SearchComponent />
-        </div>
-        <MySonogListComponent v-if="mylist"/>
-        <PlayListComponent v-if="playlist" />
-        <FullPlayerComponent v-if="fullplayer" />
         <ShortPlaerCompoent v-if="shortplayer" />
     </div>
 </template>
@@ -34,6 +22,7 @@ import FullPlayerComponent from "./FullPlayer.vue"
 import ShortPlaerCompoent from "./ShortPlayer.vue"
 import {EventHub, EventData, EventType} from "../model/EventHub"
 import BetterScroll from "better-scroll"
+import {router} from "../route/Router"
 
 let userCallback: (data: EventData) => void | undefined = undefined;
 let tabCallback: (data: EventData) => void | undefined = undefined;
@@ -42,11 +31,8 @@ let fullplayerCallback: (data:EventData) => void | undefined = undefined
 let shortplayerCallback: (data: EventData) => void | undefined = undefined
 @Component({name: "App", components: {HeaderComponent, TabComponent,  RecommendationComponent, SingerListComponent, MySonogListComponent, TopListComponent, SearchComponent, PlayListComponent, FullPlayerComponent, ShortPlaerCompoent}})
 export default class App extends Vue {
-    mylist: boolean = false
     playlist: boolean = false
-    fullplayer: boolean = false
-    tab: number = 0
-    shortplayer: boolean = true
+    shortplayer: boolean = false
     mounted() {
         console.log("App loaded")
         userCallback = this.showMySongList.bind(this)
@@ -62,19 +48,47 @@ export default class App extends Vue {
     }
 
     showMySongList(show: EventData) {
-        this.mylist = show.data
+        if (show.data) {
+            router.push("/my")
+        }
+        else{
+            router.back()
+        }
     }
 
     switchTab(tab: EventData) {
-        this.tab = tab.data
+        switch(tab.data) {
+            case 0:
+                router.replace("/")
+                break;
+            case 1:
+                router.replace("/singer")
+                break;
+            case 2:
+                router.replace("/top")
+                break;
+            case 3:
+                router.replace("/search")
+                break;
+        }
     }
 
     showPlayList(data: EventData) {
-        this.playlist = data.data
+        if (data.data) {
+            router.push("/list")
+        }
+        else{
+            router.back()
+        }
     }
 
     showFullPlayer(data: EventData) {
-        this.fullplayer = data.data
+        if (data.data) {
+            router.push("/full")
+        }
+        else{
+            router.back()
+        }
     }
 
     showShortPlayer(data: EventData) {
