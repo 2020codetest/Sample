@@ -11,7 +11,7 @@
         </div>
         <div class="playlistitems" ref="playlistref">
             <ul :style="{margin: 0, border: 0, padding: 0}">
-                <li v-for="item in data.list" :key="item.id" class="playlistitem">
+                <li v-for="item in data.list" :key="item.id" class="playlistitem" @click="showPlayer()">
                     <p class="playlistitemtitle">{{item.name}}</p>
                     <p class="playlistiteminfo">{{item.singer}}.{{item.album}}</p>
                 </li>
@@ -34,6 +34,10 @@ export default class PlayList extends Vue{
 
     back() {
         EventHub.FireEvent(EventType.PlayListEvent, false)
+    }
+
+    showPlayer() {
+        EventHub.FireEvent(EventType.FullPlayerEvent, true)
     }
 
     mounted() {
@@ -63,7 +67,7 @@ export default class PlayList extends Vue{
     padding: 10px;
     font-size: 22px;
     color: #ffcd32;
-    z-index: 50;
+    z-index: 40;
 }
 
 .playlistback::before{
@@ -99,7 +103,7 @@ export default class PlayList extends Vue{
 .playlistrandomplay{
     position: absolute;
     bottom: 20px;
-    z-index: 50;
+    z-index: 40;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -120,10 +124,11 @@ export default class PlayList extends Vue{
 }
 
 .playlistitems{
-    position:absolute;
+    position:fixed;
     top: 70vw;
     bottom: 0;
     padding: 20px 30px;
+    overflow:hidden;
 }
 
 .playlistitem{

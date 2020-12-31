@@ -21,3 +21,12 @@ export interface PlayListData {
     title: string;
     list: UserSong[];
 }
+
+export interface PlayData {
+    cover: string;
+    duration: number;
+    singer: string;
+    songname: string;
+    musicurl: string;
+    lyric?: string;
+}

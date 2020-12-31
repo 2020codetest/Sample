@@ -8,7 +8,7 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
-import { DiscItem } from "../model/view/ViewData"
+import { DiscItem } from "../../model/view/ViewData"
 import DiscComponent from "./Disc.vue"
 
 @Component({name: "SongListRec", components: {DiscComponent}})

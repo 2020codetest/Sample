@@ -12,8 +12,8 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 import {Vue, Component, Prop} from "vue-property-decorator"
-import { EventHub, EventType } from '../model/EventHub';
-import {CoverRecItem} from "../model/view/ViewData"
+import { EventHub, EventType } from '../../model/EventHub';
+import {CoverRecItem} from "../../model/view/ViewData"
 
 @Component({name: "CoverRecComponent"})
 export default class CoverRec extends Vue{

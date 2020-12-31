@@ -9,8 +9,8 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
-import { EventHub, EventType } from "../model/EventHub";
-import { DiscItem } from "../model/view/ViewData";
+import { EventHub, EventType } from "../../model/EventHub";
+import { DiscItem } from "../../model/view/ViewData";
 
 @Component({name: "SongList"})
 export default class Disc extends Vue {

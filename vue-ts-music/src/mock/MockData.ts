@@ -7,6 +7,7 @@ import RecentSongListData from "./RecentSongList.json"
 import SliderResponseData from "./SliderRespnose.json"
 import SearchResponseData from "./SearchResponse.json"
 import AlbumResponseData from "./AlbumResponse.json"
+import PlayDataResponseData from "./PlayDataResponse.json"
 import { SearchResult } from "../model/search/SearchResult";
 import { TopResponse } from "../model/rank/TopResposne";
 import { HotKeyResposne } from "../model/search/HotKeyResponse";
@@ -14,6 +15,7 @@ import { DiscResponse } from "../model/disc/DiscResponse";
 import { SliderResponse } from "../model/slider/SliderResponse";
 import { UserSong } from "../model/user/Song";
 import { AlbumResponse } from "../model/song/AlbumResponse";
+import { PlayData } from "../model/view/ViewData";
 
 export function getMockSliderResponse(): SliderResponse{
   return SliderResponseData
@@ -45,4 +47,8 @@ export function getMockSearchResponse(): SearchResult{
 
 export function getMockAlbumResponse(): AlbumResponse{
   return AlbumResponseData
+}
+
+export function getMockPlayData(): PlayData {
+  return PlayDataResponseData
 }

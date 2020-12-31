@@ -8,8 +8,8 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
-import CoverRecComponent from "./CoverRec.vue"
-import DiscListRecComponent from "./DiscListRec.vue"
+import CoverRecComponent from "./subcomponent/CoverRec.vue"
+import DiscListRecComponent from "./subcomponent/DiscListRec.vue"
 import BetterScroll from "better-scroll"
 import { getMockDiscRecResponse, getMockSliderResponse } from "../mock/MockData"
 import { CoverRecItem, DiscItem } from "../model/view/ViewData"
