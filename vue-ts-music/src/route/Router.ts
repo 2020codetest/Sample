@@ -9,26 +9,26 @@ import PlayListComponent from "../component/PlayList.vue"
 export var router = new VueRouter({
     routes: [
         {
-            path: '/', component: RecommendationComponent
+            path: '/', component: RecommendationComponent, meta: 0
         },
         {
-            path: '/singer', component: SingerListComponent
+            path: '/singer', component: SingerListComponent, meta: 1
         },
         {
-            path: '/top', component: TopListComponent
+            path: '/top', component: TopListComponent, meta: 2
         },
         {
-            path: '/search', component: SearchComponent
+            path: '/search', component: SearchComponent, meta: 3
         },
         {
-            path: '/my', component: MySonogListComponent
+            path: '/my', component: MySonogListComponent, meta: 4
         },
         {
-            path: '/full', component: FullPlayerComponent
+            path: '/full', component: FullPlayerComponent, meta: 0
         },
         {
-            path: '/list', component: PlayListComponent
+            path: '/list', component: PlayListComponent, meta: 0
         }
     ],
-    mode: "history"
+    mode: "hash"
 })

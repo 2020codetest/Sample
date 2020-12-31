@@ -8,6 +8,7 @@
 <script lang="ts">
 import {Vue, Component} from "vue-property-decorator"
 import { EventHub, EventType } from "../model/EventHub"
+import {router} from "../route/Router"
 interface TabInfo{
     title: string;
     sel: boolean;
@@ -18,7 +19,8 @@ interface TabInfo{
 export default class Tab extends Vue{
     list: TabInfo[] = [{title: "推荐", sel: true, id: 0}, {title: "歌手", sel: false, id: 1}, {title: "排行", sel: false, id: 2}, {title: "搜索", sel: false, id: 3}]
     mounted() {
-        console.log("TabComponent loaded")
+        let currentRoute = router.currentRoute
+        this.select(currentRoute.meta as number)
     }
 
     select(id: number) {
