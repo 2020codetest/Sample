@@ -2,19 +2,19 @@
     <div>
         <span class="songlistrectitle">热门歌单推荐</span>
         <ul class="songlistreclist">
-            <SongListComponent v-for="item in list" :key="item.id" :reco="item"/>
+            <DiscComponent v-for="item in list" :key="item.id" :disc="item"/>
         </ul>
     </div>
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
-import { SongListRecomendation } from "../model/Recommendation"
-import SongListComponent from "./SongList.vue"
+import { DiscItem } from "../model/view/ViewData"
+import DiscComponent from "./Disc.vue"
 
-@Component({name: "SongListRec", components: {SongListComponent}})
-export default class SongListRec extends Vue{
+@Component({name: "SongListRec", components: {DiscComponent}})
+export default class DiscListRec extends Vue{
     @Prop()
-    list: SongListRecomendation[]
+    list: DiscItem[]
     mounted() {
     }
 }

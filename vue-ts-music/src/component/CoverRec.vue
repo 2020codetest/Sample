@@ -12,12 +12,12 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 import {Vue, Component, Prop} from "vue-property-decorator"
-import { CoverRecomendation } from "../model/Recommendation"
+import {CoverRecItem} from "../model/view/ViewData"
 
 @Component({name: "CoverRecComponent"})
 export default class CoverRec extends Vue{
     @Prop()
-    Items: CoverRecomendation[];
+    Items: CoverRecItem[];
     mounted(){
         new Swiper(".swiper-container", {
             direction: "horizontal",

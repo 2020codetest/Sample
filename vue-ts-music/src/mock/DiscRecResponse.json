@@ -1,0 +1,616 @@
+{
+	"code": 0,
+	"subcode": 0,
+	"message": "",
+	"default": 0,
+	"data": {
+		"uin": 0,
+		"categoryId": 10000000,
+		"sortId": 5,
+		"sum": 10698,
+		"sin": 0,
+		"ein": 29,
+		"list": [
+			{
+				"dissid": "7709267730",
+				"createtime": "2020-09-08",
+				"commit_time": "2020-09-08",
+				"dissname": "你的世界，我退出了…",
+				"imgurl": "http://qpic.y.qq.com/music_cover/EO2wfjiaFO7oGyMFiaRZib9iayxIibMB5ZSDtsnp2AOB5gEOQqlVYuIHaDA/300?n=1",
+				"introduction": "",
+				"listennum": 8701149,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 3295254506,
+					"encrypt_uin": "oi-q7K-k7e4z7c**",
+					"name": "折纸为鹤",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7700913650",
+				"createtime": "2020-09-09",
+				"commit_time": "2020-09-09",
+				"dissname": "解乏提神｜学生党专属宝藏歌单 ",
+				"imgurl": "http://qpic.y.qq.com/music_cover/LUDrE6pU5ZYpN8icLYuFOoGQDSN27ts3Sn2qAj2aXfxb7icXPwa6vJicw/300?n=1",
+				"introduction": "",
+				"listennum": 2415476,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 327561642,
+					"encrypt_uin": "oi-l7KC57wvA",
+					"name": "半生.",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7794169089",
+				"createtime": "2020-12-01",
+				"commit_time": "2020-12-01",
+				"dissname": "Christmas | 欧美群星唱响圣诞",
+				"imgurl": "http://qpic.y.qq.com/music_cover/GvQXFfkbr8ia53LjO2KbxwdhFovLRtcrzGw3838r5YkqrTgDZyNmegQ/300?n=1",
+				"introduction": "",
+				"listennum": 1231515,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 2361627205,
+					"encrypt_uin": "owosoKCA7i-z7v**",
+					"name": "Rings of Saturn",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7691803915",
+				"createtime": "2020-08-25",
+				"commit_time": "2020-08-25",
+				"dissname": "古风戏腔 | 戏里戏外无人说",
+				"imgurl": "http://qpic.y.qq.com/music_cover/ebxVDMSrIr0KHic07h73iacyibBTS0GooNEMnCohEoGEeHjibWXysr0YOA/300?n=1",
+				"introduction": "",
+				"listennum": 32722641,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 1242012453,
+					"encrypt_uin": "oK-Pown5owvkoz**",
+					"name": "自渡·",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7708477791",
+				"createtime": "2020-09-12",
+				"commit_time": "2020-09-12",
+				"dissname": "优质片段 | 将所有温柔集于一身",
+				"imgurl": "http://qpic.y.qq.com/music_cover/FdGG7ojHL8Ek9cD3puhtBgfiaDgaLmAiccCoGayDiagJUcMRw7a53PqaQ/300?n=1",
+				"introduction": "",
+				"listennum": 1392791,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 3427724427,
+					"encrypt_uin": "oivA7iSA7evA7z**",
+					"name": "北川同学",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "2361852660",
+				"createtime": "2017-04-16",
+				"commit_time": "2017-04-16",
+				"dissname": "游戏运动专用丨300首纯电音，瞬间五杀",
+				"imgurl": "http://p.qpic.cn/music_cover/0GgOOrIBQ14wNzmVraZQ5YBvFrIicPnr0dA171odtUtmEzzEiapDth6A/600?n=1",
+				"introduction": "",
+				"listennum": 65430475,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 2,
+					"qq": 1209430845,
+					"encrypt_uin": "oK-zNKvioecP7v**",
+					"name": "DesTiny",
+					"isVip": 2,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7665021543",
+				"createtime": "2020-08-05",
+				"commit_time": "2020-08-05",
+				"dissname": "治愈日语│平安喜乐，得偿所愿",
+				"imgurl": "http://p.qpic.cn/music_cover/gBUV0W9Qy3eZ4rO93jRia5HgLIpNplVcTkMysPnDjqPYooo0a8aTr1w/600?n=1",
+				"introduction": "",
+				"listennum": 73229,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 2260344491,
+					"encrypt_uin": "ow-soeoP7evqov**",
+					"name": "喝奶茶吗",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7779681490",
+				"createtime": "2020-11-15",
+				"commit_time": "2020-11-15",
+				"dissname": "先人一步｜即将爆火的潜力歌曲",
+				"imgurl": "http://qpic.y.qq.com/music_cover/ia6ZUX9x6l4Zp1LozrUiatye76ZQsibNicdpNsb0FxuYxdnkVCVZqEwOZA/300?n=1",
+				"introduction": "",
+				"listennum": 4219917,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 7,
+					"qq": 492180382,
+					"encrypt_uin": "7eEAoKczoicA",
+					"name": "音巢阿呆",
+					"isVip": 7,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7581343266",
+				"createtime": "2020-05-29",
+				"commit_time": "2020-05-29",
+				"dissname": "情窦初开 | 想要甜甜的恋爱",
+				"imgurl": "http://qpic.y.qq.com/music_cover/Zqn9d9hvgT1O39PeFzU41PM58LEVvxSBpaL3vVnAvU9gsJZ6QSHZmQ/300?n=1",
+				"introduction": "",
+				"listennum": 74768941,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 2900403492,
+					"encrypt_uin": "owEzoevzoivqoc**",
+					"name": "ONLY",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7642661719",
+				"createtime": "2020-07-18",
+				"commit_time": "2020-07-18",
+				"dissname": "太上头啦，这都是什么神仙歌曲",
+				"imgurl": "http://qpic.y.qq.com/music_cover/G23Jh71GIkJcpxyWhAsSNiavbiaNJkuxXMGlQva84J0Y2oNvWaVcxickA/300?n=1",
+				"introduction": "",
+				"listennum": 6909070,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 2565763957,
+					"encrypt_uin": "ow4s7KSsoiEk7z**",
+					"name": "放下我的小熊.",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "2952350197",
+				"createtime": "2017-03-08",
+				"commit_time": "2017-03-08",
+				"dissname": "一口咖啡配一曲慵懒的Bossa Nova",
+				"imgurl": "http://p.qpic.cn/music_cover/zatr0nFicnNY553NK53y6GmQiaTX1J05R1sMHCHWvdFibgyIYDy2egJbA/600?n=1",
+				"introduction": "",
+				"listennum": 364309,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 2,
+					"qq": 2056163937,
+					"encrypt_uin": "ownk7w6soiEi7z**",
+					"name": "?痞子时代",
+					"isVip": 2,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "3604761333",
+				"createtime": "2017-12-18",
+				"commit_time": "2017-12-18",
+				"dissname": "入坑必听 | 古风一曲解千愁",
+				"imgurl": "http://qpic.y.qq.com/music_cover/8KfvDey9cibtZ5xkWxRic6vtgScu1rJ2j9Gk4UWJpWYJjF1Q4mCfVHWQ/300?n=1",
+				"introduction": "",
+				"listennum": 11762024,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 2,
+					"qq": 1367363703,
+					"encrypt_uin": "oKos7iosoiSzoz**",
+					"name": "秋水浮萍任飘渺",
+					"isVip": 2,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7642348321",
+				"createtime": "2020-07-18",
+				"commit_time": "2020-07-18",
+				"dissname": "梨涡少年【易烊千玺Live精选】",
+				"imgurl": "http://qpic.y.qq.com/music_cover/Fb45aBbVLegttnxiaLc7iciaWjg47cOjgB6Pj6vQs5wMxkuYIQicfjKXUw/300?n=1",
+				"introduction": "",
+				"listennum": 3132576,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 3143941595,
+					"encrypt_uin": "oi6PoiEPoK4q7v**",
+					"name": "途中.",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7747870306",
+				"createtime": "2020-10-13",
+				"commit_time": "2020-10-13",
+				"dissname": "说唱｜甜度爆表的旋律说唱",
+				"imgurl": "http://qpic.y.qq.com/music_cover/ia3EctBodpGv1HTtMoXrWsZPE00n2pzXoqrlZyPbFMbGPBoTric5Mttg/300?n=1",
+				"introduction": "",
+				"listennum": 156274,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 2635732555,
+					"encrypt_uin": "owCi7KSiow4k7v**",
+					"name": "神仙妹妹.",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7746069464",
+				"createtime": "2020-10-11",
+				"commit_time": "2020-10-11",
+				"dissname": "神级Live·直达灵魂的天籁之声",
+				"imgurl": "http://qpic.y.qq.com/music_cover/VhAgGQjHibRicQ0Gia816codNOndozfxWF0XPpSdTzgUI28TeB0bibcWmA/300?n=1",
+				"introduction": "",
+				"listennum": 234296,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 2607132419,
+					"encrypt_uin": "owCz7i6iowv5Nv**",
+					"name": "酌",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7773936447",
+				"createtime": "2020-11-09",
+				"commit_time": "2020-11-09",
+				"dissname": "Rap男丧：没了少年的光芒与期待",
+				"imgurl": "http://qpic.y.qq.com/music_cover/RLicvMJqDS5oYiaiaDXY3gNECLsEqQW0G7GRPwmbSAltylq85Qibho7xrA/300?n=1",
+				"introduction": "",
+				"listennum": 55839,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 1295613126,
+					"encrypt_uin": "oK-q7KC5oi6A7c**",
+					"name": "小林ovo",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7691292777",
+				"createtime": "2020-08-26",
+				"commit_time": "2020-08-26",
+				"dissname": "古风女声:小女子愿陪公子一生",
+				"imgurl": "http://qpic.y.qq.com/music_cover/IsaPt7zx9NY2weX4XrXiaOYuqDlEYUiaRqhhYia9qldDSFfhnxKxVxYiaQ/300?n=1",
+				"introduction": "",
+				"listennum": 4403776,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 1350916312,
+					"encrypt_uin": "oKokoeE57wo5oc**",
+					"name": "仙儿",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7672546486",
+				"createtime": "2020-08-10",
+				"commit_time": "2020-08-10",
+				"dissname": "神仙翻唱！这样唱让原唱情何以堪",
+				"imgurl": "http://qpic.y.qq.com/music_cover/TS6jIa9fD2o25AS9alibFrxt8xkflPmsVqyRfBBaxEick1gpBnTc0btw/300?n=1",
+				"introduction": "",
+				"listennum": 1302684,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 1357488878,
+					"encrypt_uin": "oKok7ivFNeclNn**",
+					"name": "情柔间眸.",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7718785536",
+				"createtime": "2020-09-17",
+				"commit_time": "2020-09-17",
+				"dissname": "微甜Rap｜我想请你跳只舞",
+				"imgurl": "http://qpic.y.qq.com/music_cover/fpZG9lVibYBEyHY0vPKTfKyY8bEonSabkb0mqBnk0RXzWT16U9gQAmg/300?n=1",
+				"introduction": "",
+				"listennum": 723505,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 2293312079,
+					"encrypt_uin": "ow-qoio5ownlNv**",
+					"name": "‭",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "2931035154",
+				"createtime": "2016-10-20",
+				"commit_time": "2016-10-20",
+				"dissname": "华语｜给你一张过去的CD",
+				"imgurl": "http://p.qpic.cn/music_cover/R8unPZMA4Vp5v2Ms96bsticHAkIcqVdkJpyIibBnjyvWur7NUcbvdaibQ/600?n=1",
+				"introduction": "",
+				"listennum": 91696843,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 2,
+					"qq": 945187827,
+					"encrypt_uin": "NKvkoKclNe-l",
+					"name": "念安娜",
+					"isVip": 2,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "5137719959",
+				"createtime": "2018-11-12",
+				"commit_time": "2018-11-12",
+				"dissname": "苦涩Rap | 伤心的时候不要听 !",
+				"imgurl": "http://p.qpic.cn/music_cover/N989Yfypibia4roDxwxzpl9tc3RQQaDAuiaho0TCEySlLbg1tlH8JRjYQ/600?n=1",
+				"introduction": "",
+				"listennum": 9982728,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 2,
+					"qq": 349915071,
+					"encrypt_uin": "oivqNK6koeS5",
+					"name": "梅内斯",
+					"isVip": 2,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7669151026",
+				"createtime": "2020-08-08",
+				"commit_time": "2020-08-08",
+				"dissname": "甘愿沉迷 | 你的说唱男友Remix",
+				"imgurl": "http://qpic.y.qq.com/music_cover/yAwOwLg91f9kPe4I3hXd7mpU5x6Eibl6zzYbfy3Ge1ia1aktXN6qaHOw/300?n=1",
+				"introduction": "",
+				"listennum": 363771,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 3261609492,
+					"encrypt_uin": "oi-soKCzNKvqoc**",
+					"name": "为安不够好.",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7097197259",
+				"createtime": "2019-07-20",
+				"commit_time": "2019-07-20",
+				"dissname": "催专累了！来听听周杰伦的老歌",
+				"imgurl": "http://p.qpic.cn/music_cover/R8unPZMA4Vp5v2Ms96bst2FDyE3xBhbQUYaJUCZWr74jLDHAmuYCcQ/600?n=1",
+				"introduction": "",
+				"listennum": 38506760,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 2,
+					"qq": 945187827,
+					"encrypt_uin": "NKvkoKclNe-l",
+					"name": "念安娜",
+					"isVip": 2,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7784481513",
+				"createtime": "2020-11-17",
+				"commit_time": "2020-11-17",
+				"dissname": "暴露年龄！学生时代MP3里听的歌",
+				"imgurl": "http://qpic.y.qq.com/music_cover/oMphCibDIicibO3ibh8tztPnIp3nianPqnFE9GsAKLibNo1yhsfzAvQ9L4aw/300?n=1",
+				"introduction": "",
+				"listennum": 11417644,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 1522531377,
+					"encrypt_uin": "oK4Aow4ioKol7z**",
+					"name": "PC12138",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "1167624255",
+				"createtime": "2017-07-12",
+				"commit_time": "2017-07-12",
+				"dissname": "顶级rap大神，嘻哈潮流由他们引领",
+				"imgurl": "http://p.qpic.cn/music_cover/vX30SW1bxye5h17MSNM6QicBMPlVOzYeGz5HasKCeZicSeibb7Z2nYLVQ/600?n=1",
+				"introduction": "",
+				"listennum": 3636533,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 3051524321,
+					"encrypt_uin": "oinkoK4A7eoAov**",
+					"name": "风云散",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7613171044",
+				"createtime": "2020-06-25",
+				"commit_time": "2020-06-25",
+				"dissname": "慢调rap | 孤独到了极致便是享受",
+				"imgurl": "http://qpic.y.qq.com/music_cover/yAwOwLg91f9kPe4I3hXd7tkQajIyh7yKXaiaYxhhTyBLPCCNKwgCicwg/300?n=1",
+				"introduction": "",
+				"listennum": 1435005,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 3261609492,
+					"encrypt_uin": "oi-soKCzNKvqoc**",
+					"name": "为安不够好.",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "2372393474",
+				"createtime": "2017-08-10",
+				"commit_time": "2017-08-10",
+				"dissname": "粤听粤有味，首首动听",
+				"imgurl": "http://p.qpic.cn/music_cover/sJbJ3JziapCLY3eOKXAqADXz6jicRaoLV5Qz2YNcwgicn08sy4bjn4oSw/600?n=1",
+				"introduction": "",
+				"listennum": 16178692,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 2,
+					"qq": 3050275225,
+					"encrypt_uin": "oinkoe-l7K-A7v**",
+					"name": "温酒伴月落",
+					"isVip": 2,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7806810803",
+				"createtime": "2020-12-07",
+				"commit_time": "2020-12-07",
+				"dissname": "「颜值男嗓」追星女孩的独家私藏",
+				"imgurl": "http://qpic.y.qq.com/music_cover/3QIjtIT58KCJl02Xmz09TnZAOPyyl0BdiaF1xJ2Ricswt7l560G3icT9w/300?n=1",
+				"introduction": "",
+				"listennum": 33018,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 245306421,
+					"encrypt_uin": "owvkoins7e-5",
+					"name": "URNOT股神",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "4163453012",
+				"createtime": "2018-06-15",
+				"commit_time": "2018-06-15",
+				"dissname": "静心时刻：学习专用纯音",
+				"imgurl": "http://qpic.y.qq.com/music_cover/NawV4ZPN5YIfVgAjVD75JoW3ibfCPGZjIX8VJ9MFTJAdKsLS12aMlDg/300?n=1",
+				"introduction": "",
+				"listennum": 11097755,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 2,
+					"qq": 2174875328,
+					"encrypt_uin": "ow6l7ecl7KoANn**",
+					"name": "Kobayashi",
+					"isVip": 2,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			},
+			{
+				"dissid": "7643113569",
+				"createtime": "2020-07-18",
+				"commit_time": "2020-07-18",
+				"dissname": "一代侠客入江湖 从此便是不归路",
+				"imgurl": "http://qpic.y.qq.com/music_cover/6XFhg7ldObxoqmMhtVke9ZIUjCnqh1fd4BpmU1Vb3YvXRxCPFZe7qg/300?n=1",
+				"introduction": "",
+				"listennum": 6950512,
+				"score": 0,
+				"version": 0,
+				"creator": {
+					"type": 0,
+					"qq": 81860394,
+					"encrypt_uin": "Ne6F7wniNKv*",
+					"name": "羁绊·",
+					"isVip": 0,
+					"avatarUrl": "",
+					"followflag": 0
+				}
+			}
+		]
+	}
+}

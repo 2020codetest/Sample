@@ -1,22 +1,21 @@
 <template>
     <li class="songlistwrap">
-        <img class="songlistcover" :src="Reco.cover" :alt="Reco.title"/>
+        <img class="songlistcover" :src="disc.cover" :alt="disc.title"/>
         <div class="songlistinfo">
-            <span class="songlisttitle">{{Reco.title}}</span>
-            <span class="songlistdesc">{{Reco.desc}}</span>
+            <span class="songlisttitle">{{disc.title}}</span>
+            <span class="songlistdesc">{{disc.desc}}</span>
         </div>
     </li>
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
-import { SongListRecomendation } from "../model/Recommendation"
+import { DiscItem } from "../model/view/ViewData";
 
 @Component({name: "SongList"})
-export default class SongList extends Vue {
+export default class Disc extends Vue {
     @Prop()
-    Reco: SongListRecomendation;
+    disc: DiscItem;
     mounted(){
-
     }
 }
 </script>

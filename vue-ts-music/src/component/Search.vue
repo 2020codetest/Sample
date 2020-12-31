@@ -8,7 +8,7 @@
         <div v-if="!showResult && hotKeys.length" class="search-keys">
             <span class="search-keys-title">热门搜索</span>
             <ul class="search-key-list">
-                <li v-for="q in hotKeys" :key="q.k" class="search-key" @click="search(q.k)">{{q.k}}</li>
+                <li v-for="q in hotKeys" :key="q.key" class="search-key" @click="search(q.key)">{{q.key}}</li>
             </ul>
         </div>
         <div v-show="showResult" ref="resultRef" class="search-result">
@@ -24,13 +24,14 @@
 <script lang="ts">
 import BetterScroll from "better-scroll"
 import {Vue, Component, Prop, Watch} from "vue-property-decorator"
-import { getMockHotKeys, getMockSearchResults } from "../mock/MockData"
-import { HotKey } from "../model/HotKey"
-import { SearchResult } from "../model/SearchResult"
+import { getMockHotKeyResposne, getMockSearchResponse } from "../mock/MockData"
+import { SearchResult } from "../model/search/SearchResult"
+import { convertHotKeyResponse } from "../model/view/ViewConverter"
+import { HotKeyItem } from "../model/view/ViewData"
 
 @Component({name: "SearchComponent"})
 export default class Search extends Vue {
-    hotKeys: HotKey[] = getMockHotKeys()
+    hotKeys: HotKeyItem[] = convertHotKeyResponse(getMockHotKeyResposne())
     query: string = ""
     showResult: boolean = false;
     searchResult: SearchResult = {data: {song: {list: []}}}
@@ -40,7 +41,7 @@ export default class Search extends Vue {
     search(query: string) {
         this.query = query
         this.showResult = true
-        this.searchResult = getMockSearchResults()
+        this.searchResult = getMockSearchResponse()
         Vue.nextTick(() => {
             new BetterScroll(this.$refs.resultRef as HTMLElement)     
         })

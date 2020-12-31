@@ -14,7 +14,7 @@
         <div class="mysonglistwrapper" ref="songlist">
             <ul v-if="activelist.length" class="mysonglistitems" >
                 <li v-for="item in activelist" :key="item.id" class="mysonglistitem">
-                    <p class="mysonglistitemtitle">{{item.title}}</p>
+                    <p class="mysonglistitemtitle">{{item.name}}</p>
                     <p class="mysonglistiteminfo">{{item.singer}} {{item.album}}</p>
                 </li>
             </ul>
@@ -27,11 +27,10 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
-import {Song} from "../model/Song"
-import {MySongListType} from "../model/MySongListType"
 import { EventHub, EventType } from "../model/EventHub"
 import { getMockRecentSongList } from "../mock/MockData"
 import BetterScroll from "better-scroll"
+import { UserSong } from "../model/user/Song"
 interface MySongListTab {
     title: string;
     sel: boolean;
@@ -40,9 +39,9 @@ interface MySongListTab {
 
 @Component({name: "MySonogListComponent"})
 export default class MySongList extends Vue {
-    recent: Song[] = getMockRecentSongList()
-    like: Song[] = []
-    activelist: Song[] = []
+    recent: UserSong[] = getMockRecentSongList()
+    like: UserSong[] = []
+    activelist: UserSong[] = []
     tabs: MySongListTab[] = [{title: "我喜欢的", sel: true, id: 0}, {title: "最近听的", sel: false, id: 1}]
     active: MySongListTab = this.tabs[0]
     scroll: BetterScroll|undefined = undefined

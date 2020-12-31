@@ -14,13 +14,14 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
-import { TopItem } from "../model/TopItem"
+import {TopItem} from "../model/rank/TopItem"
 import BetterScroll from "better-scroll"
-import { getMockTopList } from "../mock/MockData"
+import { getMockTopResponse } from "../mock/MockData"
+import { convertTopResponse } from "../model/view/ViewConverter"
 
 @Component({name: "TopListComponent"})
 export default class TopList extends Vue {
-    list: TopItem[] = getMockTopList()
+    list: TopItem[] = convertTopResponse(getMockTopResponse())
     mounted() {
         new BetterScroll(this.$refs.toplist as HTMLElement)
     }

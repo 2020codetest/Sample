@@ -27,7 +27,7 @@
 </template>
 <script lang="ts">
 import {Vue, Component} from "vue-property-decorator"
-import { SingerRepo } from "../model/Singer"
+import { SingerRepo } from "../model/singer/Singer"
 import { getMockSingerList } from "../mock/MockData"
 import BetterScroll from "better-scroll"
 
