@@ -1,7 +1,7 @@
 <template>
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div v-for="item in Items" :key="item.id" class="cover swiper-slide">
+            <div v-for="item in Items" :key="item.id" class="cover swiper-slide" @click="gotoPlayList()">
                 <img class="coverimg" :src="item.cover" />
             </div>
         </div>
@@ -12,6 +12,7 @@
 import Swiper from 'swiper/bundle';
 import 'swiper/swiper-bundle.css';
 import {Vue, Component, Prop} from "vue-property-decorator"
+import { EventHub, EventType } from '../model/EventHub';
 import {CoverRecItem} from "../model/view/ViewData"
 
 @Component({name: "CoverRecComponent"})
@@ -28,6 +29,10 @@ export default class CoverRec extends Vue{
                 el: '.swiper-pagination'
             },
         })
+    }
+
+    gotoPlayList(){
+        EventHub.FireEvent(EventType.PlayListEvent, true)
     }
 }
 </script>

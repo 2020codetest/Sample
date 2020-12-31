@@ -8,9 +8,7 @@
                 <li v-for="item in tabs" :key="item.id" class="mysonglisttitle" :class="{sel : item.sel}" @click="select(item.id)">{{item.title}}</li>
             </ul>
         </header>
-        <div class="mysonglistplay">
-            <span class="mysonglistplaytxt">随机播放全部</span>
-        </div>
+        <RandomePlayAllComponent color="hsla(0, 0%, 100%, .5)" />
         <div class="mysonglistwrapper" ref="songlist">
             <ul v-if="activelist.length" class="mysonglistitems" >
                 <li v-for="item in activelist" :key="item.id" class="mysonglistitem">
@@ -26,6 +24,7 @@
     </div>
 </template>
 <script lang="ts">
+import RandomePlayAllComponent from "./subcomponent/RandomPlayAll.vue"
 import {Vue, Component, Prop} from "vue-property-decorator"
 import { EventHub, EventType } from "../model/EventHub"
 import { getMockRecentSongList } from "../mock/MockData"
@@ -37,7 +36,7 @@ interface MySongListTab {
     id: number;
 };
 
-@Component({name: "MySonogListComponent"})
+@Component({name: "MySonogListComponent", components: {RandomePlayAllComponent}})
 export default class MySongList extends Vue {
     recent: UserSong[] = getMockRecentSongList()
     like: UserSong[] = []
@@ -126,22 +125,6 @@ export default class MySongList extends Vue {
 .mysonglisttitle.sel{
     color: white;
     background: #333;
-}
-
-.mysonglistplay{
-    width: 135px;
-    padding: 7px 0;
-    margin: 0 auto;
-    text-align: center;
-    border: 1px solid hsla(0, 0%, 100%, .5);
-    color: hsla(0, 0%, 100%, .5);
-    border-radius: 100px;
-}
-
-.mysonglistplaytxt::before{
-    content: "\E90C";
-    font-family: music-icon;
-    padding-right: 6px;
 }
 
 .mysonglistwrapper{

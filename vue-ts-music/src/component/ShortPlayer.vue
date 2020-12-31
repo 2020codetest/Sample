@@ -5,8 +5,8 @@
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
 
-@Component({name: "Album"})
-export default class Album extends Vue{
+@Component({name: "ShortPlayer"})
+export default class ShortPlayer extends Vue {
     
 }
 </script>

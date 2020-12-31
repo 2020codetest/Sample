@@ -1,5 +1,5 @@
 <template>
-    <li class="songlistwrap">
+    <li class="songlistwrap" @click="gotoPlayList()">
         <img class="songlistcover" :src="disc.cover" :alt="disc.title"/>
         <div class="songlistinfo">
             <span class="songlisttitle">{{disc.title}}</span>
@@ -9,6 +9,7 @@
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
+import { EventHub, EventType } from "../model/EventHub";
 import { DiscItem } from "../model/view/ViewData";
 
 @Component({name: "SongList"})
@@ -16,6 +17,10 @@ export default class Disc extends Vue {
     @Prop()
     disc: DiscItem;
     mounted(){
+    }
+
+    gotoPlayList() {
+        EventHub.FireEvent(EventType.PlayListEvent, true)
     }
 }
 </script>

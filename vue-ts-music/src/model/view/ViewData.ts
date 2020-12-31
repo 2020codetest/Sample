@@ -1,3 +1,5 @@
+import { UserSong } from "../user/Song";
+
 export interface CoverRecItem {
     id: number;
     cover: string;
@@ -12,4 +14,10 @@ export interface DiscItem {
 
 export interface HotKeyItem {
     key: string;
+}
+
+export interface PlayListData {
+    cover: string;
+    title: string;
+    list: UserSong[];
 }

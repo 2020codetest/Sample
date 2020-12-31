@@ -15,6 +15,8 @@
             <SearchComponent />
         </div>
         <MySonogListComponent v-if="mylist"/>
+        <PlayListComponent v-if="playlist" />
+        <FullPlayerComponent v-if="fullplayer" />
     </div>
 </template>
 <script lang="ts">
@@ -26,14 +28,20 @@ import SingerListComponent from "./SingerList.vue"
 import MySonogListComponent from "./MySongList.vue"
 import TopListComponent from "./TopList.vue"
 import SearchComponent from "./Search.vue"
+import PlayListComponent from "./PlayList.vue"
+import FullPlayerComponent from "./FullPlayer.vue"
 import {EventHub, EventData, EventType} from "../model/EventHub"
 import BetterScroll from "better-scroll"
 
 let userCallback: (data: EventData) => void | undefined = undefined;
-let tabCallback: (data: EventData) => void | undefined = undefined
-@Component({name: "App", components: {HeaderComponent, TabComponent,  RecommendationComponent, SingerListComponent, MySonogListComponent, TopListComponent, SearchComponent}})
+let tabCallback: (data: EventData) => void | undefined = undefined;
+let playListCallback: (data: EventData) => void | undefined = undefined;
+let fullplayerCallback: (data:EventData) => void | undefined = undefined
+@Component({name: "App", components: {HeaderComponent, TabComponent,  RecommendationComponent, SingerListComponent, MySonogListComponent, TopListComponent, SearchComponent, PlayListComponent, FullPlayerComponent}})
 export default class App extends Vue {
-    mylist: boolean = false;
+    mylist: boolean = false
+    playlist: boolean = false
+    fullplayer: boolean = false
     tab: number = 0
     mounted() {
         console.log("App loaded")
@@ -41,6 +49,10 @@ export default class App extends Vue {
         EventHub.RegisterEvent(EventType.MySongListEvent, userCallback)
         tabCallback = this.switchTab.bind(this)
         EventHub.RegisterEvent(EventType.HomePageTab, tabCallback)
+        playListCallback = this.showPlayList.bind(this)
+        EventHub.RegisterEvent(EventType.PlayListEvent, playListCallback)
+        fullplayerCallback = this.showFullPlayer.bind(this)
+        EventHub.RegisterEvent(EventType.FullPlayerEvent, fullplayerCallback)
     }
 
     showMySongList(show: EventData) {
@@ -51,9 +63,19 @@ export default class App extends Vue {
         this.tab = tab.data
     }
 
+    showPlayList(data: EventData) {
+        this.playlist = data.data
+    }
+
+    showFullPlayer(data: EventData) {
+        this.fullplayer = data.data
+    }
+
     destroyed(){
         EventHub.UnregisterEvent(EventType.MySongListEvent, userCallback)
         EventHub.UnregisterEvent(EventType.HomePageTab, tabCallback)
+        EventHub.UnregisterEvent(EventType.PlayListEvent, playListCallback)
+        EventHub.UnregisterEvent(EventType.FullPlayerEvent, fullplayerCallback)
     }
 }
 </script>

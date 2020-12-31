@@ -21,7 +21,7 @@ export default class Recommendation extends Vue {
     list: DiscItem[] = convertDiscRecResponse(getMockDiscRecResponse())
 
     mounted() {
-        new BetterScroll(this.$refs.recoSec as HTMLElement)
+        new BetterScroll(this.$refs.recoSec as HTMLElement, {click: true})
     }
 }
 </script>

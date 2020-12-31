@@ -5,7 +5,9 @@ export interface EventData{
 
 export const enum EventType{
     MySongListEvent = "MySongList",
-    HomePageTab = "HomePageTab"
+    HomePageTab = "HomePageTab",
+    PlayListEvent = "PlayListEvent",
+    FullPlayerEvent = "FullPlayerEvent"
 }
 
 export class EventHub{

@@ -1,11 +1,14 @@
 import { Slider } from "../slider/Slider";
 import { SliderResponse } from "../slider/SliderResponse";
 import { Disc } from "../disc/Disc"
-import { CoverRecItem, DiscItem, HotKeyItem } from "./ViewData";
+import { CoverRecItem, DiscItem, HotKeyItem, PlayListData } from "./ViewData";
 import { DiscResponse } from "../disc/DiscResponse";
 import { TopResponse } from "../rank/TopResposne";
 import { TopItem } from "../rank/TopItem";
 import { HotKeyResposne } from "../search/HotKeyResponse";
+import { AlbumResponse } from "../song/AlbumResponse";
+import { Song } from "../song/Song";
+import { UserSong } from "../user/Song";
 
 function convertSlider(slider: Slider) : CoverRecItem{
     return {
@@ -53,6 +56,34 @@ export function convertHotKeyResponse(response: HotKeyResposne): HotKeyItem[] {
         if (++cnt >= 10) {
             break
         }
+    }
+
+    return ret
+}
+
+function convertPlayData(song: Song): UserSong{
+    let singers: string[] = []
+    for(let singer of song.musicData.singer) {
+        singers.push(singer.name)
+    }
+
+    return {
+        id: song.musicData.songid,
+        name: song.musicData.songname,
+        singer: singers.join("/"),
+        album: song.musicData.albumname
+    }
+}
+
+export function convertAlbumResponse(response: AlbumResponse, title: string, cover: string) : PlayListData{
+    let ret: PlayListData = {
+        title: "薛之谦",
+        cover: "https://y.gtimg.cn/music/photo_new/T001R300x300M000002J4UUk29y8BY.jpg?max_age=2592000",
+        list: []
+    }
+
+    for (let playdata of response.data.list) {
+        ret.list.push(convertPlayData(playdata))
     }
 
     return ret

@@ -6,6 +6,8 @@ interface Singer{
 interface MusicData{
     singer: Singer[];
     songname: string;
+    songid: number;
+    albumname: string;
 }
 
 export interface Song{
