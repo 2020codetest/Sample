@@ -87,7 +87,7 @@ export default class FullPlayer extends Vue {
         this.parser = new LyricParser(this.data.lyric, (lineno: number) => {
             this.lyric = this.lines[lineno]
             this.lineno = lineno
-            if (this.tab == 1){
+            if (this.tab == 1 && !this.scroll.movingDirectionY){
                 this.refreshLinePos()
             }
         })
@@ -200,8 +200,11 @@ export default class FullPlayer extends Vue {
         if (offsetY > height / 2 && lyricLinesHeight - offsetY > height / 2) {
             lyricCollection.style.transform = `translateY(${height / 2 - offsetY}px)`
         }
-        else if (this.scroll.hasVerticalScroll && offsetY <= height / 2) {
+        else if (offsetY <= height / 2) {
             lyricCollection.style.transform = "translateY(0px)"
+        }
+        else if (lyricLinesHeight - offsetY <= height / 2) {
+            lyricCollection.style.transform = `translateY(${height- lyricLinesHeight}px)`
         }
     }
 
