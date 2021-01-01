@@ -29,7 +29,7 @@
             </div>
             <div class="fullplayertime">
                 <span class="fullplayertimestart">{{start}}</span>
-                <div class="flllplayerprogresswrap" ref="progressBarRef" @click="seek($event)" @touchcancel="touchEnd()"  @touchend="touchEnd()"  @touchmove="dragParnet($event)">
+                <div class="flllplayerprogresswrap" ref="progressBarRef" @touchstart="touchStart($event)" @touchcancel="touchEnd()"  @touchend="touchEnd()"  @touchmove="dragParnet($event)">
                     <div class="flllplayerprogress">
                         <div class="fullplayerprogresscur" :style="{width: prog + '%'}"></div>
                         <div class="fullplayercurdot" ref="progressDotRef" :style="{left: prog + '%'}"/>
@@ -131,15 +131,20 @@ export default class FullPlayer extends Vue {
         }
     }
 
-    seek(event: MouseEvent) {
-        let clientWidth = (this.$refs.progressBarRef as HTMLElement).clientWidth;
-        this.prog = (event.offsetX / clientWidth) * 100
-        if (this.prog < 0) {
-            this.prog = 0
-        }
+    touchStart(event: TouchEvent) {
+        if (event.touches && event.touches.length) {
+            let touch = event.touches[0]
+            let ele = this.$refs.progressBarRef as HTMLElement
+            let clientWidth = ele.clientWidth;
+            let offsetX = touch.pageX - ele.offsetLeft
+            this.prog = (offsetX / clientWidth) * 100
+            if (this.prog < 0) {
+                this.prog = 0
+            }
 
-        if (this.prog > 100) {
-            this.prog = 100
+            if (this.prog > 100) {
+                this.prog = 100
+            }
         }
         
         this.porgressChanged = true

@@ -94,7 +94,7 @@ export class Player{
     }
 
     seek(prog: number) {
-        this.player.currentTime = (prog * this.player.duration / 100) 
+        this.player.currentTime = Math.floor(prog * this.player.duration / 100) 
         this.state = PlayerState.play
         this.player.play()
     }
