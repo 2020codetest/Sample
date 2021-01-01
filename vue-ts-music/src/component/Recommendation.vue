@@ -1,10 +1,12 @@
 <template>
+<div class="content">
     <div class="recowrapper" ref="recoSec">
         <div class="recoinnerwrapper">
             <CoverRecComponent :items="items" />
             <DiscListRecComponent :list="list" />
         </div>
     </div>
+</div>
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"

@@ -2,9 +2,7 @@
     <div class="root">
         <HeaderComponent />
         <TabComponent />
-        <div class="content">
-            <router-view />
-        </div>
+        <router-view />
         <ShortPlaerCompoent v-if="shortplayer" />
     </div>
 </template>

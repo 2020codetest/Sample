@@ -1,25 +1,25 @@
 <template>
-    <div>
-        <div class="search-box">
-            <i class="icon-search"/>
-            <input placeholder="搜索歌曲、歌手" class="search-input" v-model="query" />
-            <i class="icon-dimiss" v-show="query" @click="query=''"/>
-        </div>
-        <div v-if="!showResult && hotKeys.length" class="search-keys">
-            <span class="search-keys-title">热门搜索</span>
-            <ul class="search-key-list">
-                <li v-for="q in hotKeys" :key="q.key" class="search-key" @click="search(q.key)">{{q.key}}</li>
-            </ul>
-        </div>
-        <div v-show="showResult" ref="resultRef" class="search-result">
-            <ul class="search-result-list">
-                <li v-for="song in searchResult.data.song.list" :key="song.songid" class="search-result-item">
-                    <i class="icon-music"></i>
-                    <span class="search-result-info">{{song.songname}}-{{song.singer[0].name}}</span>
-                </li>
-            </ul>
-        </div>
+<div class="content">
+    <div class="search-box">
+        <i class="icon-search"/>
+        <input placeholder="搜索歌曲、歌手" class="search-input" v-model="query" />
+        <i class="icon-dimiss" v-show="query" @click="query=''"/>
     </div>
+    <div v-if="!showResult && hotKeys.length" class="search-keys">
+        <span class="search-keys-title">热门搜索</span>
+        <ul class="search-key-list">
+            <li v-for="q in hotKeys" :key="q.key" class="search-key" @click="search(q.key)">{{q.key}}</li>
+        </ul>
+    </div>
+    <div v-show="showResult" ref="resultRef" class="search-result">
+        <ul class="search-result-list">
+            <li v-for="song in searchResult.data.song.list" :key="song.songid" class="search-result-item">
+                <i class="icon-music"></i>
+                <span class="search-result-info">{{song.songname}}-{{song.singer[0].name}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
 </template>
 <script lang="ts">
 import BetterScroll from "better-scroll"

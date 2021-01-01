@@ -1,4 +1,5 @@
 <template>
+<div class="content">
   <div class="list-view" ref="listView">
     <ul>
       <li v-for="group in singers" class="list-group" :key="group.id" ref="listGroup">
@@ -24,6 +25,7 @@
       </ul>
     </div>
   </div>
+</div>
 </template>
 <script lang="ts">
 import {Vue, Component} from "vue-property-decorator"

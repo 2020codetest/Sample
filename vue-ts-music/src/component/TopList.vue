@@ -1,4 +1,5 @@
 <template>
+<div class="content">
     <div class="toplistwrap" ref="toplist">
         <ul class="toplist">
             <li v-for="item in list" :key="item.id" class="toplistitem">
@@ -11,6 +12,7 @@
             </li>
         </ul>
     </div>
+</div>
 </template>
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
