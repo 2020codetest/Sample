@@ -183,7 +183,7 @@ export default class FullPlayer extends Vue {
         if (offsetY > height / 2 && lyricLinesHeight - offsetY > height / 2) {
             this.scroll.scrollTo(0, height / 2 - offsetY)
         }
-        else if (this.scroll.hasVerticalScroll) {
+        else if (this.scroll.hasVerticalScroll && offsetY <= height / 2) {
             this.scroll.scrollTo(0, 0)
         }
     }
