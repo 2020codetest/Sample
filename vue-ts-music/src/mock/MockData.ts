@@ -8,6 +8,7 @@ import SliderResponseData from "./SliderRespnose.json"
 import SearchResponseData from "./SearchResponse.json"
 import AlbumResponseData from "./AlbumResponse.json"
 import PlayDataResponseData from "./PlayDataResponse.json"
+import LyricResponseData from "./LyricResponse.json"
 import { SearchResult } from "../model/search/SearchResult";
 import { TopResponse } from "../model/rank/TopResposne";
 import { HotKeyResposne } from "../model/search/HotKeyResponse";
@@ -16,6 +17,7 @@ import { SliderResponse } from "../model/slider/SliderResponse";
 import { UserSong } from "../model/user/Song";
 import { AlbumResponse } from "../model/song/AlbumResponse";
 import { PlayData } from "../model/view/ViewData";
+import {LyricResponse} from "../model/song/Lyric";
 
 export function getMockSliderResponse(): SliderResponse{
   return SliderResponseData
@@ -51,4 +53,8 @@ export function getMockAlbumResponse(): AlbumResponse{
 
 export function getMockPlayData(): PlayData {
   return PlayDataResponseData
+}
+
+export function getMockLyricResponse(): LyricResponse{
+  return LyricResponseData
 }
