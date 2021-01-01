@@ -24,7 +24,7 @@ export var router = new VueRouter({
             path: '/my', component: MySonogListComponent, meta: 4
         },
         {
-            path: '/full', component: FullPlayerComponent, meta: 0
+            path: '/full', component: FullPlayerComponent, meta: 0, name: "plaer"
         },
         {
             path: '/list', component: PlayListComponent, meta: 0

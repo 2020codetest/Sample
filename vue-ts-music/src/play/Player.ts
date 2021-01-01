@@ -1,4 +1,6 @@
 import { EventHub, EventType } from "../model/EventHub"
+import { PlayData } from "../model/view/ViewData"
+import { getNextMusic } from "./PlayControl"
 
 export const enum PlayerState {
     stopped = 1,
@@ -10,10 +12,13 @@ export interface PlayerStateData{
     state: PlayerState;
     duration: number;
     progress: number;
+    data: PlayData;
 }
 
 export class Player{
+    private playData: PlayData|undefined = undefined
     private state: PlayerState = PlayerState.stopped
+    private progress: number = 0
     private player: HTMLAudioElement = new Audio()
     private static instance: Player = new Player()
     private constructor() {
@@ -28,25 +33,43 @@ export class Player{
         return this.instance;
     }
 
+    getPlayState(): PlayerStateData{
+        if (!this.playData) {
+            this.playData = getNextMusic()
+            this.play()
+        }
+
+        return {
+            state: this.state,
+            progress: this.progress,
+            duration: typeof this.player.duration === 'undefined' ? 0 : this.player.duration,
+            data: this.playData
+        }
+    }
+
     onDurationUpdate(event: Event){
+        this.state = PlayerState.play
+        this.progress = this.player.currentTime
         // update current time here
         let playData: PlayerStateData = {
             state: PlayerState.play,
             progress: this.player.currentTime,
             duration: this.player.duration,
-
+            data: this.playData
         }
 
         EventHub.FireEvent(EventType.PlayEvent, playData)
     }
 
     onPause() {
+        this.progress = this.player.currentTime
         this.state = PlayerState.paused
         // update current time here
         let playData: PlayerStateData = {
             state: PlayerState.paused,
             progress: this.player.currentTime,
             duration: this.player.duration,
+            data: this.playData
 
         }
 
@@ -54,39 +77,44 @@ export class Player{
     }
 
     canPlay() {
+        this.state = PlayerState.play
+        this.progress = this.player.currentTime
         // update current time here
         let playData: PlayerStateData = {
             state: PlayerState.play,
             progress: this.player.currentTime,
             duration: this.player.duration,
-
+            data: this.playData
         }
 
         EventHub.FireEvent(EventType.PlayEvent, playData)
     }
 
     onEnded(){
+        this.progress = 0
         this.state = PlayerState.stopped
         // update current time here
         let playData: PlayerStateData = {
             state: PlayerState.stopped,
             progress: this.player.duration,
             duration: this.player.duration,
+            data: this.playData
 
         }
 
         EventHub.FireEvent(EventType.PlayEvent, playData)
-
+        setTimeout(() => {this.playNext()}, 200)
     }
 
     onError() {
+        this.progress = 0
         this.state = PlayerState.stopped
         // update current time here
         let playData: PlayerStateData = {
             state: PlayerState.stopped,
             progress: this.player.duration,
             duration: this.player.duration,
-
+            data: this.playData
         }
 
         EventHub.FireEvent(EventType.PlayEvent, playData)
@@ -109,8 +137,12 @@ export class Player{
     }
 
     play(): void {
+        if (!this.playData){
+            this.playData = getNextMusic()
+        }
+
         if (this.state == PlayerState.stopped) {
-            this.player.src = "http://aqqmusic.tc.qq.com/amobile.music.tc.qq.com/C400000BZ9Fg16MAU2.m4a?guid=4487422810&vkey=BDB46379F81DB9EBDA874F2D86B768AEB9834B34372E540BC5EEAD0D2C1907C177C6EE81E0F0F29A02737BFDEF793BB9BE298E65FE0D9DA7&uin=0&fromtag=38"
+            this.player.src = this.playData.musicurl
         }
 
         this.player.play()
@@ -121,10 +153,14 @@ export class Player{
     }
 
     playNext(): boolean {
+        this.state = PlayerState.stopped;
+        this.playData = getNextMusic()
+        this.play()
         return true
     }
 
     playPrev(): boolean {
+        this.playNext()
         return true;
     }
 }

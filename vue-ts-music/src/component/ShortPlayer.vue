@@ -1,14 +1,14 @@
 <template>
     <div class="shortplayer">
         <div class="shortplayerstart">
-            <img :src="data.cover" :alt="data.songname" class="shortplayercover playanimation"/>
+            <img :src="data.cover" :alt="data.songname" class="shortplayercover" :class="{playanimation: state == 3}" @click="gotoFullPlayer()"/>
             <div class="shortplayerstartinfo">
                 <p class="shortplayerstarttitle">{{data.songname}}</p>
                 <p class="shortplayerstartdesc">{{data.singer}}</p>
             </div>
         </div>
         <div class="shortplayerend">
-            <div class="shortplayon"/>
+            <div :class="{shortplayon: state !== 3, shortplayoff: state === 3}" @click="clickPlay()"/>
             <div class="shortplaylist" />
         </div>
     </div>
@@ -16,12 +16,37 @@
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
 import { getMockPlayData } from "../mock/MockData"
+import { EventData, EventHub, EventType } from "../model/EventHub"
 import { PlayData } from "../model/view/ViewData"
+import { Player, PlayerState } from "../play/Player"
 
+let playUpdateCallback: (event: EventData) => void | undefined = undefined
 @Component({name: "ShortPlayer"})
-export default class ShortPlayer extends Vue {
-    data: PlayData = getMockPlayData()
-    
+export default class ShortPlayer extends Vue {    
+    data: PlayData = Player.getInstance().getPlayState().data
+    state: PlayerState = PlayerState.stopped
+    clickPlay() {
+        Player.getInstance().onPlayClick()
+    }
+
+    mounted() {
+        this.state = Player.getInstance().getPlayState().state
+        playUpdateCallback = this.playUpdate.bind(this)
+        EventHub.RegisterEvent(EventType.PlayEvent, playUpdateCallback)
+    }
+
+    destroyed() {
+        EventHub.UnregisterEvent(EventType.PlayEvent, playUpdateCallback)
+    }
+
+    gotoFullPlayer() {
+        EventHub.FireEvent(EventType.FullPlayerEvent, true)
+    }
+
+    playUpdate(event: EventData) {
+        this.state = event.data.state
+        this.data = event.data.data
+    }
 }
 </script>
 <style lang="scss">
@@ -32,7 +57,7 @@ export default class ShortPlayer extends Vue {
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: 400;
+    z-index: 150;
     background: #333;
     height: 60px;
 }
@@ -88,6 +113,10 @@ export default class ShortPlayer extends Vue {
 
 .shortplayon::before{
     content: "\E90C";
+}
+
+.shortplayoff::before{
+    content: "\E90B";
 }
 
 .shortplaylist{

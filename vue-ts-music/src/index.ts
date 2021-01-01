@@ -6,6 +6,10 @@ import Vuex from "vuex"
 
 Vue.use(Vuex)
 Vue.use(VueRouter)
+if (router.currentRoute.name === "player") {
+    router.replace("/")
+}
+
 new Vue({
     router,
     render: h => h(App),

@@ -8,7 +8,6 @@ import SliderResponseData from "./SliderRespnose.json"
 import SearchResponseData from "./SearchResponse.json"
 import AlbumResponseData from "./AlbumResponse.json"
 import PlayDataResponseData from "./PlayDataResponse.json"
-import LyricResponseData from "./LyricResponse.json"
 import { SearchResult } from "../model/search/SearchResult";
 import { TopResponse } from "../model/rank/TopResposne";
 import { HotKeyResposne } from "../model/search/HotKeyResponse";
@@ -51,10 +50,6 @@ export function getMockAlbumResponse(): AlbumResponse{
   return AlbumResponseData
 }
 
-export function getMockPlayData(): PlayData {
+export function getMockPlayData(): PlayData[] {
   return PlayDataResponseData
-}
-
-export function getMockLyricResponse(): LyricResponse{
-  return LyricResponseData
 }
