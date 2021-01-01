@@ -8,7 +8,8 @@ export const enum EventType{
     HomePageTab = "HomePageTab",
     PlayListEvent = "PlayListEvent",
     FullPlayerEvent = "FullPlayerEvent",
-    ShortPlayerEvent = "ShortPlayerEvent"
+    ShortPlayerEvent = "ShortPlayerEvent",
+    PlayEvent = "PlayEvent"
 }
 
 export class EventHub{

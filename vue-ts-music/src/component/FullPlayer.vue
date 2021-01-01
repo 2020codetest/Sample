@@ -10,7 +10,7 @@
         </header>
         <vue-touch @swipeleft="updateTab(1)" @swiperight="updateTab(0)">
             <div class="fullplayercontent">
-                <img v-show="tab == 0" :src="data.cover" :alt="data.songname" class="fullplayercontentcover playanimation"/>
+                <img v-show="tab == 0" :src="data.cover" :alt="data.songname" class="fullplayercontentcover " :class='{playanimation: inplay}'/>
                 <span v-show="tab === 0" class="fullplayerlyicline">{{lyric}}</span>
                 <div v-show="tab == 1" class="fullplayerfulllyric" ref="fulllyricRef">
                     <div v-if="lines.length > 0 && tab == 1">
@@ -29,13 +29,18 @@
             </div>
             <div class="fullplayertime">
                 <span class="fullplayertimestart">{{start}}</span>
-                <span class="flllplayerprogress"></span>
+                <div class="flllplayerprogresswrap" ref="progressBarRef" @click="seek($event)" @touchcancel="touchEnd()"  @touchend="touchEnd()"  @touchmove="dragParnet($event)">
+                    <div class="flllplayerprogress">
+                        <div class="fullplayerprogresscur" :style="{width: prog + '%'}"></div>
+                        <div class="fullplayercurdot" ref="progressDotRef" :style="{left: prog + '%'}"/>
+                    </div>
+                </div>
                 <span class="fullplayertimeend">{{end}}</span>
             </div>
             <footer class="fullplayerfooter">
                 <i class="fullplayorder"></i>
                 <i class="fullplayprev"></i>
-                <i class="fullplayon"></i>
+                <i :class="{fullplayon: !inplay, fullplayoff: inplay}" @click="clickPlay()"></i>
                 <i class="fullplaynext"></i>
                 <i class="fullplayfavor"></i>
             </footer>
@@ -45,29 +50,37 @@
 <script lang="ts">
 import {Vue, Component, Prop} from "vue-property-decorator"
 import { getMockLyricResponse, getMockPlayData } from "../mock/MockData"
-import { EventHub, EventType } from "../model/EventHub"
+import { EventData, EventHub, EventType } from "../model/EventHub"
 import {PlayData} from "../model/view/ViewData"
 import BetterScroll from "better-scroll"
 import LyricParser from "lyric-parser"
 import {Base64} from "js-base64"
 import VueTouch from 'vue-touch'
+import {Player, PlayerState, PlayerStateData} from "../play/Player"
+import {convertTime} from "../model/Util"
+
 Vue.use(VueTouch, {name: "vue-touch"})
 interface LyricLine {
     line: string;
     active: boolean;
 }
 
+let playUpdateCallback: (event: EventData) => void | undefined = undefined
 @Component({name: "FullPlayer"})
 export default class FullPlayer extends Vue {
     data: PlayData = getMockPlayData()
-    start: string = "0:08"
-    end: string = "4:19"
+    start: string = ""
+    end: string = ""
     tab: number = 0
     parser: LyricParser|undefined = undefined
     lyric: string = ""
     lines: string[] = []
     lineno: number = 0
+    prog: number = 100
     scroll: BetterScroll|undefined = undefined
+    porgressChanged: boolean = false
+    indrag: boolean = false
+    inplay: boolean = true
     mounted(){
         this.data.lyric = Base64.decode(getMockLyricResponse().lyric)
         this.parser = new LyricParser(this.data.lyric, (obj: any) => {
@@ -85,9 +98,72 @@ export default class FullPlayer extends Vue {
             this.lines.push(line.txt)
         }
 
-        this.parser.play()
         this.scroll = new BetterScroll(this.$refs.fulllyricRef as HTMLElement, {click: true})
+        Player.getInstance().play()
+        this.parser.play()
+        playUpdateCallback = this.playUpdate.bind(this)
+        EventHub.RegisterEvent(EventType.PlayEvent, playUpdateCallback)
     }
+
+    playUpdate(event: EventData) {
+        if (this.indrag){
+            return;
+        }
+
+        let data: PlayerStateData = event.data
+        this.start = convertTime(data.progress)
+        this.end = convertTime(data.duration)
+        this.prog = (data.progress / data.duration) * 100
+        if (data.state == PlayerState.play) {
+            this.parser.seek(data.progress * 1000)
+            this.inplay = true
+        }
+        else{
+            this.inplay = false
+            this.parser.stop()
+        }
+    }
+
+    touchEnd() {
+        this.indrag = false
+        if (this.porgressChanged){
+            Player.getInstance().seek(this.prog)
+        }
+    }
+
+    seek(event: MouseEvent) {
+        let clientWidth = (this.$refs.progressBarRef as HTMLElement).clientWidth;
+        this.prog = (event.offsetX / clientWidth) * 100
+        if (this.prog < 0) {
+            this.prog = 0
+        }
+
+        if (this.prog > 100) {
+            this.prog = 100
+        }
+        
+        this.porgressChanged = true
+    }
+
+    dragParnet(event: TouchEvent) {
+        if (event.target == this.$refs.progressDotRef && event.touches && event.touches.length) {
+            this.indrag = true
+            this.porgressChanged = true
+            let touch = event.touches[0]
+            let ele = this.$refs.progressBarRef as HTMLElement
+            let clientWidth = ele.clientWidth;
+            let offsetX = touch.pageX - ele.offsetLeft
+            this.prog = (offsetX / clientWidth) * 100
+            if (this.prog < 0) {
+                this.prog = 0
+            }
+
+            if (this.prog > 100) {
+                this.prog = 100
+            }
+        }
+    }
+
 
     updateTab(tab: number){
         this.tab = tab
@@ -114,6 +190,14 @@ export default class FullPlayer extends Vue {
 
     closePlayer() {
         EventHub.FireEvent(EventType.FullPlayerEvent, false)
+    }
+
+    destroyed() {        
+        EventHub.UnregisterEvent(EventType.PlayEvent, playUpdateCallback)
+    }
+
+    clickPlay() {
+        Player.getInstance().onPlayClick()
     }
 }
 </script>
@@ -294,10 +378,36 @@ export default class FullPlayer extends Vue {
     width: 30px;
 }
 
-.flllplayerprogress{
+.flllplayerprogresswrap{
+    padding: 8px 0;
     flex: 1;
+    box-sizing: border-box;
+}
+
+.flllplayerprogress{
+    width: 100%;
     height: 4px;
     background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.fullplayerprogresscur{
+    left: 0;
+    background: #ffcd32;
+    height: 4px;
+}
+
+.fullplayercurdot{
+    position: absolute;
+    border-radius: 50%;
+    padding: 2px;
+    width: 20px;
+    height: 20px;
+    background: #ffcd32;
+    box-sizing: border-box;
+    border: 3px solid white;
+    top: -8px;
+    transform: translateX(-10px);
 }
 
 .fullplayerfooter{
@@ -322,6 +432,11 @@ export default class FullPlayer extends Vue {
 
 .fullplayon::before{
     content: "\E90C";
+    font-size: 40px;
+}
+
+.fullplayoff::before{
+    content: "\E90B";
     font-size: 40px;
 }
 
