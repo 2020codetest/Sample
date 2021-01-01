@@ -69,7 +69,7 @@ export class Player{
         this.state = PlayerState.stopped
         // update current time here
         let playData: PlayerStateData = {
-            state: PlayerState.play,
+            state: PlayerState.stopped,
             progress: this.player.duration,
             duration: this.player.duration,
 
@@ -81,6 +81,15 @@ export class Player{
 
     onError() {
         this.state = PlayerState.stopped
+        // update current time here
+        let playData: PlayerStateData = {
+            state: PlayerState.stopped,
+            progress: this.player.duration,
+            duration: this.player.duration,
+
+        }
+
+        EventHub.FireEvent(EventType.PlayEvent, playData)
     }
 
     onPlayClick() {
