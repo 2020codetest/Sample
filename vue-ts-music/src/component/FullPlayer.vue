@@ -54,11 +54,10 @@ import {Vue, Component, Prop} from "vue-property-decorator"
 import { EventData, EventHub, EventType } from "../model/EventHub"
 import {PlayData} from "../model/view/ViewData"
 import BetterScroll from "better-scroll"
-import LyricParser from "lyric-parser"
-import {Base64} from "js-base64"
 import VueTouch from 'vue-touch'
 import {Player, PlayerState, PlayerStateData} from "../play/Player"
 import {convertTime} from "../model/Util"
+import {LyricParser} from "../lyric/LyricParser"
 
 Vue.use(VueTouch, {name: "vue-touch"})
 interface LyricLine {
@@ -82,26 +81,18 @@ export default class FullPlayer extends Vue {
     porgressChanged: boolean = false
     indrag: boolean = false
     inplay: boolean = false
-    lyricStarted: boolean = false
 
     updateLynric() {
-        this.lyricStarted = false
-        let decodedLyric = Base64.decode(this.data.lyric)
-        this.parser = new LyricParser(decodedLyric, (obj: any) => {
-            this.lyric = obj.txt
-            this.lineno = obj.lineNum
-            if (this.tab == 1) {
+        this.lineno = 0
+        this.parser = new LyricParser(this.data.lyric, (lineno: number) => {
+            this.lyric = this.lines[lineno]
+            this.lineno = lineno
+            if (this.tab == 1){
                 this.refreshLinePos()
             }
-
-            var newLines = this.lines.slice(0)
-            this.lines = newLines
         })
 
-        this.lines = []
-        for (let line of this.parser.lines) {
-            this.lines.push(line.txt)
-        }
+        this.lines = this.parser.getLines()
     }
 
     mounted(){
@@ -121,6 +112,9 @@ export default class FullPlayer extends Vue {
         }
 
         this.updateLynric()
+        if (state.progress) {
+            this.parser.getHighligtedTextLine(state.progress * 1000)
+        }
     }
 
     playUpdate(event: EventData) {
@@ -132,19 +126,13 @@ export default class FullPlayer extends Vue {
         this.data = data.data
         this.start = convertTime(data.progress)
         this.end = convertTime(data.duration)
+        this.parser.getHighligtedTextLine(data.progress * 1000)
         this.prog = (data.progress / data.duration) * 100
         if (data.state == PlayerState.play) {
-            if (!this.lyricStarted) {
-                this.parser.play()
-                this.lyricStarted = true
-            }
-
-            this.parser.seek(data.progress * 1000)
             this.inplay = true
         }
         else{
             this.inplay = false
-            this.parser.stop()
         }
     }
 
@@ -210,10 +198,10 @@ export default class FullPlayer extends Vue {
         let lyricCollection = (this.$refs.fulllyricRef as HTMLElement).children[0] as HTMLElement
         let lyricLinesHeight = lyricCollection.clientHeight
         if (offsetY > height / 2 && lyricLinesHeight - offsetY > height / 2) {
-            this.scroll.scrollTo(0, height / 2 - offsetY)
+            lyricCollection.style.transform = `translateY(${height / 2 - offsetY}px)`
         }
         else if (this.scroll.hasVerticalScroll && offsetY <= height / 2) {
-            this.scroll.scrollTo(0, 0)
+            lyricCollection.style.transform = "translateY(0px)"
         }
     }
 
