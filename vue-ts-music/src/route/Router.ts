@@ -1,4 +1,4 @@
-import VueRouter from "vue-router"
+import VueRouter, { NavigationGuardNext } from "vue-router"
 import SingerListComponent from "../component/SingerList.vue"
 import RecommendationComponent from "../component/Recommendation.vue"
 import TopListComponent from "../component/TopList.vue"
@@ -31,4 +31,19 @@ export var router = new VueRouter({
         }
     ],
     mode: "hash"
+})
+
+var firstPlaerPage: boolean = true
+router.beforeEach((to, from, next) => {
+    if (to.path !== '/full') {
+        firstPlaerPage = false
+    }    
+
+    if (firstPlaerPage) {
+        firstPlaerPage = false
+        next({path: "/"})
+    }
+    else{
+        next()
+    }
 })
