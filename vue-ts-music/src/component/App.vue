@@ -31,6 +31,7 @@ let shortplayerCallback: (data: EventData) => void | undefined = undefined
 export default class App extends Vue {
     playlist: boolean = false
     shortplayer: boolean = false
+    cangoback: boolean = true
     mounted() {
         console.log("App loaded")
         userCallback = this.showMySongList.bind(this)
@@ -43,6 +44,21 @@ export default class App extends Vue {
         EventHub.RegisterEvent(EventType.FullPlayerEvent, fullplayerCallback)
         shortplayerCallback = this.showShortPlayer.bind(this)
         EventHub.RegisterEvent(EventType.ShortPlayerEvent, shortplayerCallback)
+        if (router.currentRoute.name === "my"
+        || router.currentRoute.name === "player"
+        || router.currentRoute.name === "list") {
+            this.cangoback = false
+        }
+    }
+
+    safeBack(){
+        if (this.cangoback){
+            router.back()
+        }
+        else{
+            router.push("/")
+            this.cangoback = true
+        }
     }
 
     showMySongList(show: EventData) {
@@ -50,7 +66,7 @@ export default class App extends Vue {
             router.push("/my")
         }
         else{
-            router.back()
+            this.safeBack()
         }
     }
 
@@ -76,7 +92,7 @@ export default class App extends Vue {
             router.push("/list")
         }
         else{
-            router.back()
+            this.safeBack()
         }
     }
 
@@ -85,7 +101,7 @@ export default class App extends Vue {
             router.push("/full")
         }
         else{
-            router.back()
+            this.safeBack()
         }
     }
 
@@ -113,6 +129,12 @@ body{
     background: #222;
     font-size: 14px;
     font-family: mu;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 li {

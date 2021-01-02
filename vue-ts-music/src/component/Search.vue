@@ -13,7 +13,7 @@
     </div>
     <div v-show="showResult" ref="resultRef" class="search-result">
         <ul class="search-result-list">
-            <li v-for="song in searchResult.data.song.list" :key="song.songid" class="search-result-item">
+            <li v-for="song in searchResult.data.song.list" :key="song.songid" class="search-result-item" @click="gotoFullPlayer()">
                 <i class="icon-music"></i>
                 <span class="search-result-info">{{song.songname}}-{{song.singer[0].name}}</span>
             </li>
@@ -25,6 +25,7 @@
 import BetterScroll from "better-scroll"
 import {Vue, Component, Prop, Watch} from "vue-property-decorator"
 import { getMockHotKeyResposne, getMockSearchResponse } from "../mock/MockData"
+import { EventHub, EventType } from "../model/EventHub"
 import { SearchResult } from "../model/search/SearchResult"
 import { convertHotKeyResponse } from "../model/view/ViewConverter"
 import { HotKeyItem } from "../model/view/ViewData"
@@ -35,15 +36,13 @@ export default class Search extends Vue {
     query: string = ""
     showResult: boolean = false;
     searchResult: SearchResult = {data: {song: {list: []}}}
-    mounted() {     
-    }
 
     search(query: string) {
         this.query = query
         this.showResult = true
         this.searchResult = getMockSearchResponse()
         Vue.nextTick(() => {
-            new BetterScroll(this.$refs.resultRef as HTMLElement)     
+            new BetterScroll(this.$refs.resultRef as HTMLElement, {click: true})     
         })
     }
 
@@ -55,6 +54,10 @@ export default class Search extends Vue {
         else{
             this.search(query)
         }
+    }
+
+    gotoFullPlayer() {
+        EventHub.FireEvent(EventType.FullPlayerEvent, true)
     }
 }
 </script>

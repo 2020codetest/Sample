@@ -1,24 +1,24 @@
 <template>
 <div class="content">
-  <div class="list-view" ref="listView">
+  <div class="singerlistview" ref="listViewRef">
     <ul>
-      <li v-for="group in singers" class="list-group" :key="group.id" ref="listGroup">
-        <span class="list-group-title">{{ group.title }}</span>
+      <li v-for="group in singers" class="singerlistgroup" :key="group.id" ref="listGroupRef">
+        <span class="singerlistgroup-title">{{ group.title }}</span>
         <ul>
-          <li v-for="item in group.items" class="list-group-item" :key="item.id">
-            <img :src="item.avatar" class="avatar">
-            <span class="name">{{ item.name }}</span>
+          <li v-for="item in group.items" class="singerlistgroup-item" :key="item.id" @click="gotoPlayList()">
+            <img :src="item.avatar" class="singerlistgroup-itemavatar">
+            <span class="singerlistgroup-itemname">{{ item.name }}</span>
           </li>
         </ul>
       </li>
     </ul>
-    <div class="list-shortcut">
+    <div class="singerlist-shortcut">
       <ul>
         <li v-for="(item, index) in shortcutList"
-        class="item"
+        class="singerlist-shortcutitem"
         :data-index="index"
         :key="item.id"
-        :class="{'current': currentIndex === index}"
+        :class="{'singerlist-shortcutitemcurrent': currentIndex === index}"
         >
           {{ item }}
         </li>
@@ -32,6 +32,7 @@ import {Vue, Component} from "vue-property-decorator"
 import { SingerRepo } from "../model/singer/Singer"
 import { getMockSingerList } from "../mock/MockData"
 import BetterScroll from "better-scroll"
+import { EventHub, EventType } from "../model/EventHub"
 
 @Component({name: "SingerListComponent"})
 export default class SingerList extends Vue{
@@ -52,7 +53,7 @@ export default class SingerList extends Vue{
     }
 
     initScroll() {
-        let scroll = new BetterScroll(this.$refs.listView as HTMLElement, {probeType: 3, click: true})
+        let scroll = new BetterScroll(this.$refs.listViewRef as HTMLElement, {click: true})
         scroll.on('scroll', (pos) => {
             let y = pos.y
             if (y > 0) {
@@ -74,7 +75,7 @@ export default class SingerList extends Vue{
     }
 
     calculateHeight() {
-        const list = this.$refs.listGroup as Element[]
+        const list = this.$refs.listGroupRef as Element[]
         let height = 0
         this.listHeight.push(height)
         for (let i = 0; i < list.length; ++i) {
@@ -83,22 +84,21 @@ export default class SingerList extends Vue{
             this.listHeight.push(height)
         }
     }
+
+    gotoPlayList() {
+        EventHub.FireEvent(EventType.PlayListEvent, true)
+    }
 }
 </script>
-<style lang="scss" scoped>
-ul{
-    padding: 0;
-    margin: 0;
-    border: 0;
-}
-.list-view {
+<style lang="scss">
+.singerlistview {
     position: relative;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    .list-group {
+    .singerlistgroup {
         padding-bottom: 30px;
-        .list-group-title {
+        .singerlistgroup-title {
             display: block;
             width: 100%;
             height: 30px;
@@ -108,42 +108,42 @@ ul{
             color: hsla(0,0%,100%,.5);
             background: #333;
         }
-        .list-group-item {
+        .singerlistgroup-item {
             display: flex;
             align-items: center;
             padding: 20px 0 0 30px;
-            .avatar {
+            .singerlistgroup-itemavatar {
                 width: 50px;
                 height: 50px;
                 border-radius: 50%;
             }
-            .name {
+            .singerlistgroup-itemname {
                 margin-left: 20px;
                 color: hsla(0,0%,100%,.5);
                 font-size: 14px;
             }
         }
     }
-    .list-shortcut {
-        position: absolute;
-        z-index: 30;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 20px;
-        padding: 20px 0;
-        border-radius: 10px;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.3);
-        .item {
-            padding: 3px;
-            line-height: 1;
-            color: hsla(0,0%,100%,.5);
-            font-size: 11px;
-            &.current {
-                color: #ffcd32;
-                // font-weight: bold;
-            }
+}
+
+.singerlist-shortcut {
+    position: absolute;
+    z-index: 30;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    padding: 20px 0;
+    border-radius: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.3);
+    .singerlist-shortcutitem {
+        padding: 3px;
+        line-height: 1;
+        color: hsla(0,0%,100%,.5);
+        font-size: 11px;
+        &.singerlist-shortcutitemcurrent {
+            color: #ffcd32;
         }
     }
 }

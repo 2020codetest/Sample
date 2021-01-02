@@ -16,7 +16,6 @@ import { SliderResponse } from "../model/slider/SliderResponse";
 import { UserSong } from "../model/user/Song";
 import { AlbumResponse } from "../model/song/AlbumResponse";
 import { PlayData } from "../model/view/ViewData";
-import {LyricResponse} from "../model/song/Lyric";
 
 export function getMockSliderResponse(): SliderResponse{
   return SliderResponseData

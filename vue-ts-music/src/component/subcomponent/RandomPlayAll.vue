@@ -1,16 +1,20 @@
 <template>
-    <div class="randomplayall" :style="{color: color, border: '1px solid ' + color}">
+    <div class="randomplayall" :style="{color: color, border: '1px solid ' + color}" @click="gotoPlayList()">
         <span class="randomplayalltxt">随机播放全部</span>
     </div>
 </template>
 <script lang="ts">
 
 import {Vue, Component, Prop} from "vue-property-decorator"
+import { EventHub, EventType } from "../../model/EventHub";
 
 @Component({name: "RandomPlayAll"})
 export default class RandomPlayAll extends Vue {
     @Prop()
     color: string;
+    gotoPlayList() {
+        EventHub.FireEvent(EventType.PlayListEvent, true)
+    }
 }
 </script>
 <style lang="scss">

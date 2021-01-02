@@ -21,13 +21,13 @@ export var router = new VueRouter({
             path: '/search', component: SearchComponent, meta: 3
         },
         {
-            path: '/my', component: MySonogListComponent, meta: 4
+            path: '/my', component: MySonogListComponent, meta: 0, name: "my"
         },
         {
-            path: '/full', component: FullPlayerComponent, meta: 0, name: "plaer"
+            path: '/full', component: FullPlayerComponent, meta: 0, name: "player"
         },
         {
-            path: '/list', component: PlayListComponent, meta: 0
+            path: '/list', component: PlayListComponent, meta: 0, name: "list"
         }
     ],
     mode: "hash"

@@ -2,10 +2,10 @@
 <div class="content">
     <div class="toplistwrap" ref="toplist">
         <ul class="toplist">
-            <li v-for="item in list" :key="item.id" class="toplistitem">
+            <li v-for="item in list" :key="item.id" class="toplistitem" @click="gotoPlayList()">
                 <img :src="item.picUrl" :alt="item.topTitle"  class="toplistcover"/>
                 <ul class="toplistsinglist">
-                    <li v-for="(singer, index) in item.songList"  :key="index">
+                    <li v-for="(singer, index) in item.songList"  :key="index" @click.stop="gotoFullPlayer()">
                         <div class="toplistsing">{{index + 1}} {{singer.songname}}-{{singer.singername}}</div>
                     </li>
                 </ul>
@@ -20,12 +20,21 @@ import {TopItem} from "../model/rank/TopItem"
 import BetterScroll from "better-scroll"
 import { getMockTopResponse } from "../mock/MockData"
 import { convertTopResponse } from "../model/view/ViewConverter"
+import { EventHub, EventType } from "../model/EventHub"
 
 @Component({name: "TopListComponent"})
 export default class TopList extends Vue {
     list: TopItem[] = convertTopResponse(getMockTopResponse())
     mounted() {
-        new BetterScroll(this.$refs.toplist as HTMLElement)
+        new BetterScroll(this.$refs.toplist as HTMLElement, {click: true})
+    }
+
+    gotoPlayList() {
+        EventHub.FireEvent(EventType.PlayListEvent, true)
+    }
+
+    gotoFullPlayer() {
+        EventHub.FireEvent(EventType.FullPlayerEvent, true)
     }
 }
 </script>

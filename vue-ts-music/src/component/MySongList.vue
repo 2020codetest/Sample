@@ -11,7 +11,7 @@
         <RandomePlayAllComponent color="hsla(0, 0%, 100%, .5)" />
         <div class="mysonglistwrapper" ref="songlist">
             <ul v-if="activelist.length" class="mysonglistitems" >
-                <li v-for="item in activelist" :key="item.id" class="mysonglistitem">
+                <li v-for="item in activelist" :key="item.id" class="mysonglistitem" @click="gotoFullPlayer()">
                     <p class="mysonglistitemtitle">{{item.name}}</p>
                     <p class="mysonglistiteminfo">{{item.singer}} {{item.album}}</p>
                 </li>
@@ -45,7 +45,7 @@ export default class MySongList extends Vue {
     active: MySongListTab = this.tabs[0]
     scroll: BetterScroll|undefined = undefined
     mounted() {
-        this.scroll = new BetterScroll(this.$refs.songlist as HTMLElement)
+        this.scroll = new BetterScroll(this.$refs.songlist as HTMLElement, {click: true})
     }
 
     select(id: number) {
@@ -66,6 +66,10 @@ export default class MySongList extends Vue {
 
     back() {
         EventHub.FireEvent(EventType.MySongListEvent, false)
+    }
+
+    gotoFullPlayer() {
+        EventHub.FireEvent(EventType.FullPlayerEvent, true)
     }
 }
 </script>
