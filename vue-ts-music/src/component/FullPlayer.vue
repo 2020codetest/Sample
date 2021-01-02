@@ -157,6 +157,8 @@ export default class FullPlayer extends Vue {
             if (this.prog > 100) {
                 this.prog = 100
             }
+
+            this.indrag = true
         }
         
         this.porgressChanged = true
