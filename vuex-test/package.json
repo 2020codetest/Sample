@@ -27,7 +27,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "devDependencies": {
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "vue-property-decorator": "^8.4.2",
     "vue-template-compiler": "^2.6.11"
   }
